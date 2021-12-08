@@ -6,15 +6,14 @@
 Nebula Generator documentation
 ============================================
 
+.. image:: _static/nebula_cycles.png
+    :alt: Nebula Generator 3D
+    :width: 100%
+
+
 .. .. figure:: _static/docs_splash.jpg
 ..   :alt: Nebula Generator
 ..   :width: 560
-  
-|add_lib_video|
-
-.. |add_lib_video| raw:: html
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/LzkdxKeh0gI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 What is the Nebula Generator?
 ---------------------------------
@@ -31,16 +30,23 @@ Features
 * Animate parameters to make the clouds and stars appear as if they are moving.
 * Use in both |Cycles| and |Eevee| Blender render engines.
 
+|add_lib_video|
+
+.. |add_lib_video| raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LzkdxKeh0gI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   files
    3D/3d_overview
    2D/2d_overview
    tips/tips
    tips/troubleshooting
    contact/contact
-
 
 
 .. |Nebula Generator| raw:: html

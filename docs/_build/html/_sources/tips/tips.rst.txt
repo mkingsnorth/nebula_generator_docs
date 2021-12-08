@@ -8,3 +8,5 @@ Tips
    :caption: Contents:
 
    decrease_tile_size
+   eevee
+   cycles

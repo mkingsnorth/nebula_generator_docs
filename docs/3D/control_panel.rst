@@ -39,7 +39,7 @@ Installing the Panel
 If you have any issues do not hesitate to get in touch via `info@configurate.net <mailto:info@configurate.net>`_.
 
 
-Usage
+Using the Control Panel
 **********************************
 
 .. figure:: ../_static/side_panel_anim.gif
@@ -62,7 +62,7 @@ Usage
 
 See the :ref:`troubleshooting` section if you are having issues and don't hesitate to :ref:`get in touch<contact>`
 
-Parameters
+Control Panel Parameters
 **********************************
 
 Each section controls a different aspect of the nebula:

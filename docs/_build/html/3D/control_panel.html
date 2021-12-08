@@ -18,8 +18,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nodes and Particles" href="nodes_particles.html" />
-    <link rel="prev" title="Controls" href="controls.html" /> 
+    <link rel="next" title="2D Version" href="../2D/2d_overview.html" />
+    <link rel="prev" title="How to Use" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,28 +39,44 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="3d_overview.html">3D Version</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="controls.html">Controls</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Control Panel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#installing-the-panel">Installing the Panel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#usage">Usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#stars">Stars</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#colors">Colors</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#density">Density</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#noise">Noise</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#transform">Transform</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#quality">Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">How to Use</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Control Panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-panel">Installing the Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-control-panel">Using the Control Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#control-panel-parameters">Control Panel Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#stars">Stars</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#large-stars">Large stars</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#small-stars">Small stars</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#lighting">Lighting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#clouds-and-small-stars">Clouds and Small Stars</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#density">Density</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#main-cloud-density">Main Cloud Density</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#cloud-gas-density">Cloud Gas Density</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#noise">Noise</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#overall-noise">Overall Noise</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#noise-scale-variation">Noise Scale Variation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#noise-distortion-variation">Noise Distortion Variation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#transform">Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quality">Quality</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#eevee-quality-settings">Eevee Quality Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#cycles-quality-settings">Cycles Quality Settings</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nodes_particles.html">Nodes and Particles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="eevee.html">Eevee</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cycles.html">Cycles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2D/2d_overview.html">2D Version</a></li>
@@ -84,7 +100,6 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="3d_overview.html">3D Version</a> &raquo;</li>
-          <li><a href="controls.html">Controls</a> &raquo;</li>
       <li>Control Panel</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/3D/control_panel.rst.txt" rel="nofollow"> View page source</a>
@@ -101,7 +116,7 @@
 <a class="reference internal image-reference" href="../_images/control_panel_highlight.jpg"><img alt="Nebula Generator" src="../_images/control_panel_highlight.jpg" style="width: 100%;" /></a>
 </figure>
 <p>The Nebula Generator comes with a control panel that can manage all aspects of the nebula .blend file.</p>
-<p>The panel works for both <a class="reference internal" href="eevee.html#eevee"><span class="std std-ref">Eevee</span></a> and <a class="reference internal" href="cycles.html#cycles"><span class="std std-ref">Cycles</span></a> versions.</p>
+<p>The panel works for both <a class="reference internal" href="../tips/eevee.html#eevee"><span class="std std-ref">Eevee</span></a> and <a class="reference internal" href="../tips/cycles.html#cycles"><span class="std std-ref">Cycles</span></a> versions.</p>
 <p>It needs to be <a class="reference internal" href="#installing-the-panel"><span class="std std-ref">installed</span></a> separately.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -126,8 +141,8 @@
 </figure>
 <p>If you have any issues do not hesitate to get in touch via <a class="reference external" href="mailto:info&#37;&#52;&#48;configurate&#46;net">info<span>&#64;</span>configurate<span>&#46;</span>net</a>.</p>
 </section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h2>
+<section id="using-the-control-panel">
+<h2>Using the Control Panel<a class="headerlink" href="#using-the-control-panel" title="Permalink to this headline"></a></h2>
 <figure class="align-default" id="id2">
 <img alt="Nebula Generator Installed" src="../_images/side_panel_anim.gif" />
 <figcaption>
@@ -149,8 +164,8 @@
 </div>
 <p>See the <a class="reference internal" href="../tips/troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section if you are having issues and don’t hesitate to <a class="reference internal" href="../contact/contact.html#contact"><span class="std std-ref">get in touch</span></a></p>
 </section>
-<section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
+<section id="control-panel-parameters">
+<h2>Control Panel Parameters<a class="headerlink" href="#control-panel-parameters" title="Permalink to this headline"></a></h2>
 <p>Each section controls a different aspect of the nebula:</p>
 <section id="stars">
 <h3>Stars<a class="headerlink" href="#stars" title="Permalink to this headline"></a></h3>
@@ -403,8 +418,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="controls.html" class="btn btn-neutral float-left" title="Controls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="nodes_particles.html" class="btn btn-neutral float-right" title="Nodes and Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="How to Use" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../2D/2d_overview.html" class="btn btn-neutral float-right" title="2D Version" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
