@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eevee &mdash; Nebula Generator  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cycles" href="cycles.html" />
+    <link rel="prev" title="Decreasing Time Size" href="decrease_tile_size.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Nebula Generator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3D/3d_overview.html">3D Version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2D/2d_overview.html">2D Version</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="tips.html">Tips</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="decrease_tile_size.html">Decreasing Time Size</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Eevee</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advantages">Advantages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disadvantages">Disadvantages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cycles.html">Cycles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact/contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nebula Generator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="tips.html">Tips</a> &raquo;</li>
+      <li>Eevee</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tips/eevee.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="eevee">
+<h1>Eevee<a class="headerlink" href="#eevee" title="Permalink to this headline"></a></h1>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/eevee_version.gif"><img alt="Nebula Generator" src="../_images/eevee_version.gif" style="width: 100%;" /></a>
+</figure>
+<p>The EEVEE version allows you to quickly generate and position the nebula.</p>
+<section id="advantages">
+<h2>Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Faster than Cycles.</p></li>
+<li><p>Quickly visualise the effect in the viewport.</p></li>
+<li><p>Best at still shots and backgrounds</p></li>
+</ul>
+</section>
+<section id="disadvantages">
+<h2>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>When animating, a strobing effect can occur.  This is because EEVEE converts the nebula to flat 2D cards when rendering.  The <a class="reference internal" href="cycles.html#cycles"><span class="std std-ref">Cycles</span></a> version does not have this issue.</p></li>
+<li><p>Edges of the clouds can appear slightly blurred, which can be sharpened if you can <a class="reference internal" href="decrease_tile_size.html#decreasing-time-size"><span class="std std-ref">change Blender’s code slightly</span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="decrease_tile_size.html" class="btn btn-neutral float-left" title="Decreasing Time Size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cycles.html" class="btn btn-neutral float-right" title="Cycles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Mark Kingsnorth.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
