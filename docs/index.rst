@@ -18,12 +18,13 @@ Nebula Generator documentation
 What is the Nebula Generator?
 ---------------------------------
 
-The |Nebula Generator| is for digital artists to create configurable space nebula effects in 2D or 3D.  Great for concept art, game backgrounds, and animations.
+The |Nebula Generator| is for digital artists to create configurable space nebula effects in 2D or 3D using |Blender|.  Great for concept art, game backgrounds, and animations.
 
 Features
 ---------------------------------
 
-* You get a ready made |Blender| file setup, additional sample files, and for the 3D version an add-on for controlling the effect through one panel.
+* A ready made |Blender| file setup with additional sample files.
+* A :ref:`control panel` for the 3D version to manage all the parameters in one interface.
 * Change the colour and shape of the nebula through a range of options.
 * Control the number, position and color of stars and light sources.
 * Pan and Zoom around the 3D Nebula set up.
@@ -44,8 +45,7 @@ Features
    files
    3D/3d_overview
    2D/2d_overview
-   tips/tips
-   tips/troubleshooting
+   tips/faq
    contact/contact
 
 

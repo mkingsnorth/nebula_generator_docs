@@ -1,5 +1,5 @@
 ########################################
-How to Use
+Getting Started
 ########################################
 
 Open the **nebula_generator_3d** .blend file.  

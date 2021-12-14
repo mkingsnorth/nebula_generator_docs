@@ -29,9 +29,7 @@ The 2D version is all contained in one .blend file:
 
 
 
-Additional Files
+Sample Files
 **********************************
 
 * **samples.unzip.me.zip** - a collection of sample files using the 2D and 3D set ups.
-* **panoramic_hdri_creation.unzip.me.zip** - a set of sample files configured to create panoramic images for HDRIs.
-* **nebula_generator_for_2.92_and_below.unzip.me.zip** - this is a file containing all of the above but with for users of Blender 2.92 and below.

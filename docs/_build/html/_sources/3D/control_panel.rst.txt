@@ -60,7 +60,7 @@ Using the Control Panel
 
    The control panel works on the nodes and particle systems of the .blend file.  Adding or Deleting the nodes or particles will stop the panel from working.
 
-See the :ref:`troubleshooting` section if you are having issues and don't hesitate to :ref:`get in touch<contact>`
+See the :ref:`faq` section if you are having issues and don't hesitate to :ref:`get in touch<contact>`
 
 Control Panel Parameters
 **********************************
@@ -307,14 +307,10 @@ Quality
 Depending on whether you are rendering in Eevee or Cycles, the following parameters expose the most frequently used settings when controlling the quality of the nebula image.  
 
 .. tip::
-    These settings and more can be found on the standard |render properties| Tab as well, and are provided here for convenience.
+    These settings and more can be found on the standard Render Properties tab as well, and are provided here for convenience.
 
 
-.. |render properties| raw:: html
-
-   <a href="https://docs.blender.org/manual/en/latest/render/freestyle/render.html" target="_blank"><b>Render Properties</b></a>
-
-* **Render Engine**: Choose between Eevee and Cycles modes.  Not sure which?  See the :ref:`Tips` section.
+* **Render Engine**: Choose between Eevee and Cycles modes.  Not sure which?  See the :ref:`FAQ` section.
 
     .. image:: ../_static/render_engine_setting.jpg
         :alt: Render Engine Setting
@@ -332,6 +328,8 @@ Eevee Quality Settings
 
 * **Volumetric Samples**: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.
 * **Volumetric Shadow Samples**: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass.
+* **Bloom Threshold**: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.
+* **Bloom Intensity**: How blended with the image the bloom effect is. Lower values will reduce the overall effect.
 
 Cycles Quality Settings
 ------------------------------------
@@ -377,6 +375,12 @@ This essentially controls the 'thickness' of the nebula volume in the viewport, 
 
 * **Viewport Step Rate**:  The 'thickness' of the nebula volume in the viewport.
 * **Render Step Rate**: The 'thickness' of the nebula volume in the viewport at render time.
+
+
+Glare Threshold
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This controls the amount of post-processing *Glare* is added to the render, which affects star glow.  Increasing this parameter will make the stars and image glow less.
 
 .. |fireflies| raw:: html
     

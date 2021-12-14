@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2D Version" href="../2D/2d_overview.html" />
-    <link rel="prev" title="How to Use" href="usage.html" /> 
+    <link rel="prev" title="Getting Started" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,7 +41,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../files.html">Files</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="3d_overview.html">3D Version</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="usage.html">How to Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html">Getting Started</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Control Panel</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installing-the-panel">Installing the Panel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-control-panel">Using the Control Panel</a></li>
@@ -80,8 +80,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2D/2d_overview.html">2D Version</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tips/tips.html">Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tips/troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tips/faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contact/contact.html">Contact</a></li>
 </ul>
 
@@ -116,7 +115,7 @@
 <a class="reference internal image-reference" href="../_images/control_panel_highlight.jpg"><img alt="Nebula Generator" src="../_images/control_panel_highlight.jpg" style="width: 100%;" /></a>
 </figure>
 <p>The Nebula Generator comes with a control panel that can manage all aspects of the nebula .blend file.</p>
-<p>The panel works for both <a class="reference internal" href="../tips/eevee.html#eevee"><span class="std std-ref">Eevee</span></a> and <a class="reference internal" href="../tips/cycles.html#cycles"><span class="std std-ref">Cycles</span></a> versions.</p>
+<p>The panel works for both <a class="reference internal" href="../tips/faq.html#eevee"><span class="std std-ref">Eevee</span></a> and <a class="reference internal" href="../tips/faq.html#cycles"><span class="std std-ref">Cycles</span></a> versions.</p>
 <p>It needs to be <a class="reference internal" href="#installing-the-panel"><span class="std std-ref">installed</span></a> separately.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -162,7 +161,7 @@
 <p class="admonition-title">Warning</p>
 <p>The control panel works on the nodes and particle systems of the .blend file.  Adding or Deleting the nodes or particles will stop the panel from working.</p>
 </div>
-<p>See the <a class="reference internal" href="../tips/troubleshooting.html#troubleshooting"><span class="std std-ref">Troubleshooting</span></a> section if you are having issues and don’t hesitate to <a class="reference internal" href="../contact/contact.html#contact"><span class="std std-ref">get in touch</span></a></p>
+<p>See the <a class="reference internal" href="../tips/faq.html#faq"><span class="std std-ref">FAQ</span></a> section if you are having issues and don’t hesitate to <a class="reference internal" href="../contact/contact.html#contact"><span class="std std-ref">get in touch</span></a></p>
 </section>
 <section id="control-panel-parameters">
 <h2>Control Panel Parameters<a class="headerlink" href="#control-panel-parameters" title="Permalink to this headline"></a></h2>
@@ -356,10 +355,10 @@
 <p>Depending on whether you are rendering in Eevee or Cycles, the following parameters expose the most frequently used settings when controlling the quality of the nebula image.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>These settings and more can be found on the standard <a href="https://docs.blender.org/manual/en/latest/render/freestyle/render.html" target="_blank"><b>Render Properties</b></a> Tab as well, and are provided here for convenience.</p>
+<p>These settings and more can be found on the standard Render Properties tab as well, and are provided here for convenience.</p>
 </div>
 <ul>
-<li><p><strong>Render Engine</strong>: Choose between Eevee and Cycles modes.  Not sure which?  See the <a class="reference internal" href="../tips/tips.html#tips"><span class="std std-ref">Tips</span></a> section.</p>
+<li><p><strong>Render Engine</strong>: Choose between Eevee and Cycles modes.  Not sure which?  See the <a class="reference internal" href="../tips/faq.html#faq"><span class="std std-ref">FAQ</span></a> section.</p>
 <blockquote>
 <div><img alt="Render Engine Setting" src="../_images/render_engine_setting.jpg" />
 </div></blockquote>
@@ -376,6 +375,8 @@
 </li>
 <li><p><strong>Volumetric Samples</strong>: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.</p></li>
 <li><p><strong>Volumetric Shadow Samples</strong>: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass.</p></li>
+<li><p><strong>Bloom Threshold</strong>: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.</p></li>
+<li><p><strong>Bloom Intensity</strong>: How blended with the image the bloom effect is. Lower values will reduce the overall effect.</p></li>
 </ul>
 </section>
 <section id="cycles-quality-settings">
@@ -409,6 +410,10 @@
 <li><p><strong>Render Step Rate</strong>: The ‘thickness’ of the nebula volume in the viewport at render time.</p></li>
 </ul>
 </section>
+<section id="glare-threshold">
+<h5>Glare Threshold<a class="headerlink" href="#glare-threshold" title="Permalink to this headline"></a></h5>
+<p>This controls the amount of post-processing <em>Glare</em> is added to the render, which affects star glow.  Increasing this parameter will make the stars and image glow less.</p>
+</section>
 </section>
 </section>
 </section>
@@ -418,7 +423,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="usage.html" class="btn btn-neutral float-left" title="How to Use" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../2D/2d_overview.html" class="btn btn-neutral float-right" title="2D Version" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
