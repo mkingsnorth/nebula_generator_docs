@@ -29,7 +29,7 @@ Features
 * Control the number, position and color of stars and light sources.
 * Pan and Zoom around the 3D Nebula set up.
 * Animate parameters to make the clouds and stars appear as if they are moving.
-* Use in both |Cycles| and |Eevee| Blender render engines.
+* Use in both :ref:`Cycles and Eevee<Should I use Eevee or Cycles?>` Blender render engines.
 
 |add_lib_video|
 
