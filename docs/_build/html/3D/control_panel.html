@@ -282,12 +282,15 @@
 <section id="main-cloud-density">
 <h4>Main Cloud Density<a class="headerlink" href="#main-cloud-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/main_cloud_density.jpg" />
-<p>This controls the density of the main clouds. The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.</p>
+<p>This controls the density of the main clouds.</p>
+<p>The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.</p>
+<p>The <strong>Density Multiplier</strong> increases the thickness of the clouds even further.</p>
 </section>
 <section id="cloud-gas-density">
 <h4>Cloud Gas Density<a class="headerlink" href="#cloud-gas-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/gas_cloud_density.jpg" />
 <p>This controls the density of the gas surrounding the clouds.  The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.</p>
+<p>The <strong>Density Multiplier</strong> increases the thickness of the clouds even further.</p>
 </section>
 </section>
 <section id="noise">
@@ -366,7 +369,7 @@
 </ul>
 <section id="eevee-quality-settings">
 <h4>Eevee Quality Settings<a class="headerlink" href="#eevee-quality-settings" title="Permalink to this headline"></a></h4>
-<img alt="Eevee Quality Settings" src="../_images/Eevee_quality_settings.jpg" />
+<img alt="Eevee Quality Settings" src="../_images/eevee_quality_settings.jpg" />
 <ul>
 <li><p><strong>Tile Size</strong>: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The smaller the tile size, the greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 4px or 8px and then change to 2px for the final render.</p>
 <blockquote>
@@ -381,7 +384,7 @@
 </section>
 <section id="cycles-quality-settings">
 <h4>Cycles Quality Settings<a class="headerlink" href="#cycles-quality-settings" title="Permalink to this headline"></a></h4>
-<img alt="Eevee Quality Settings" src="../_images/cycles_quality_settings.jpg" />
+<img alt="Cycles Quality Settings" src="../_images/cycles_quality_settings.jpg" />
 <section id="samples">
 <h5>Samples<a class="headerlink" href="#samples" title="Permalink to this headline"></a></h5>
 <p>The number of times Cycles will calculate a render pass.  Higher levels will increase details, but will also increase time to render and system usage.</p>
@@ -410,9 +413,13 @@
 <li><p><strong>Render Step Rate</strong>: The ‘thickness’ of the nebula volume in the viewport at render time.</p></li>
 </ul>
 </section>
-<section id="glare-threshold">
-<h5>Glare Threshold<a class="headerlink" href="#glare-threshold" title="Permalink to this headline"></a></h5>
-<p>This controls the amount of post-processing <em>Glare</em> is added to the render, which affects star glow.  Increasing this parameter will make the stars and image glow less.</p>
+<section id="glare-threshold-and-mix">
+<h5>Glare Threshold and Mix<a class="headerlink" href="#glare-threshold-and-mix" title="Permalink to this headline"></a></h5>
+<p>This controls the amount of post-processing <em>Glare</em> is added to the render, which affects star glow.</p>
+<ul class="simple">
+<li><p><strong>Threshold</strong>:  Increasing this parameter will make the stars and image glow less.</p></li>
+<li><p><strong>Mix</strong>: This controls how much the glare effect is mixed witht the final image: 0.0 represets 50% Glare, -1 will remove the Glare and +1 will overwrite the image with the Glare effect.</p></li>
+</ul>
 </section>
 </section>
 </section>

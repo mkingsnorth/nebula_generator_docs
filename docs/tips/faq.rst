@@ -47,6 +47,22 @@ I cannot see the :ref:`control panel` in Blender.
     * The panel will only open with one of the Nebula Generator files with the 'Nebula Box' object in it.
     * If you cannot see any of the side panels on the right, pressed the 'N' which should make them appear.
 
+============================
+Any general tips?
+============================
+
+* Activate the built in Node Wrangler add-on and hold SHIFT-CTRL and click on a node to see the individual effect of each node.  This will help understand how the different parts of the effect is made up.
+* By adding node groups like noise and musgrave to the inputs of the main node group, you can get lots of additional interest effects.  I'd encourage you to experiment and let me know if you get anything interesting.
+* 2D Version
+    * I have added a curves node to the outputs of the stars and nebula node groups - playing with those settings will help intensify the colours of the nebula further.
+    * Try swapping out the stars input for your own starfields and you should get more interesting effects.
+* 3D Version 
+    * When changing parameters that have a significant effect or preparing for a render, switch the viewport to Wireframe mode.
+    * Start with a high Tile Size and low Samples value, change parameters, and then increase them gradually to get the desired effect.
+    * When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Samples setting but may not be resolved entirely.  It is hoped that EEVEE can be improved to counter this.
+    * Although the default renderer is EEVEE, the file can be adapted for CYCLES by changing the rendering format and changing the parameters of the materials.  Even though there will be a significant performance, this removed the strobing artefacts mentioned earlier.
+
+
 ********************************************************************
 Should I use Eevee or Cycles?
 ********************************************************************

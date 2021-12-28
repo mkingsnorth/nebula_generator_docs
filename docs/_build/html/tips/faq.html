@@ -49,6 +49,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-best-can-i-control-the-parameters-i-ve-managed-to-change-something-so-that-i-m-not-getting-a-good-effect-what-do-you-suggest-i-do">How best can I control the parameters? I’ve managed to change something so that I’m not getting a good effect. What do you suggest I do?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-have-a-mac-with-an-amd-radeon-gpu-pro-and-when-i-load-the-3d-nebula-generator-i-can-only-see-the-stars-what-s-happened">I have a Mac with an AMD Radeon GPU Pro, and when I load the 3D Nebula Generator I can only see the stars. What’s happened?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-cannot-see-the-control-panel-in-blender">I cannot see the <span class="xref std std-ref">control panel</span> in Blender.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#any-general-tips">Any general tips?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#should-i-use-eevee-or-cycles">Should I use Eevee or Cycles?</a><ul>
@@ -138,6 +139,31 @@
 <li><p>If you cannot see any of the side panels on the right, pressed the ‘N’ which should make them appear.</p></li>
 </ul>
 </div></blockquote>
+</section>
+<section id="any-general-tips">
+<h3>Any general tips?<a class="headerlink" href="#any-general-tips" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Activate the built in Node Wrangler add-on and hold SHIFT-CTRL and click on a node to see the individual effect of each node.  This will help understand how the different parts of the effect is made up.</p></li>
+<li><p>By adding node groups like noise and musgrave to the inputs of the main node group, you can get lots of additional interest effects.  I’d encourage you to experiment and let me know if you get anything interesting.</p></li>
+<li><dl class="simple">
+<dt>2D Version</dt><dd><ul>
+<li><p>I have added a curves node to the outputs of the stars and nebula node groups - playing with those settings will help intensify the colours of the nebula further.</p></li>
+<li><p>Try swapping out the stars input for your own starfields and you should get more interesting effects.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>3D Version</dt><dd><ul>
+<li><p>When changing parameters that have a significant effect or preparing for a render, switch the viewport to Wireframe mode.</p></li>
+<li><p>Start with a high Tile Size and low Samples value, change parameters, and then increase them gradually to get the desired effect.</p></li>
+<li><p>When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Samples setting but may not be resolved entirely.  It is hoped that EEVEE can be improved to counter this.</p></li>
+<li><p>Although the default renderer is EEVEE, the file can be adapted for CYCLES by changing the rendering format and changing the parameters of the materials.  Even though there will be a significant performance, this removed the strobing artefacts mentioned earlier.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </section>
 </section>
 <section id="should-i-use-eevee-or-cycles">

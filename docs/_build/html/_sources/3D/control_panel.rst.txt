@@ -206,7 +206,11 @@ Main Cloud Density
   :alt: Cloud Density
 
 
-This controls the density of the main clouds. The |color ramp| controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.
+This controls the density of the main clouds. 
+
+The |color ramp| controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.
+
+The **Density Multiplier** increases the thickness of the clouds even further.
 
 
 Cloud Gas Density
@@ -217,6 +221,8 @@ Cloud Gas Density
 
 
 This controls the density of the gas surrounding the clouds.  The |color ramp| controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.
+
+The **Density Multiplier** increases the thickness of the clouds even further.
 
 Noise
 =============================
@@ -318,7 +324,7 @@ Depending on whether you are rendering in Eevee or Cycles, the following paramet
 Eevee Quality Settings
 ------------------------------------
 
-.. image:: ../_static/Eevee_quality_settings.jpg
+.. image:: ../_static/eevee_quality_settings.jpg
     :alt: Eevee Quality Settings
 
 * **Tile Size**: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The smaller the tile size, the greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 4px or 8px and then change to 2px for the final render.
@@ -335,7 +341,7 @@ Cycles Quality Settings
 ------------------------------------
 
 .. image:: ../_static/cycles_quality_settings.jpg
-    :alt: Eevee Quality Settings
+    :alt: Cycles Quality Settings
     
 Samples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -377,10 +383,13 @@ This essentially controls the 'thickness' of the nebula volume in the viewport, 
 * **Render Step Rate**: The 'thickness' of the nebula volume in the viewport at render time.
 
 
-Glare Threshold
+Glare Threshold and Mix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This controls the amount of post-processing *Glare* is added to the render, which affects star glow.  Increasing this parameter will make the stars and image glow less.
+This controls the amount of post-processing *Glare* is added to the render, which affects star glow. 
+
+* **Threshold**:  Increasing this parameter will make the stars and image glow less.
+* **Mix**: This controls how much the glare effect is mixed witht the final image: 0.0 represets 50% Glare, -1 will remove the Glare and +1 will overwrite the image with the Glare effect.
 
 .. |fireflies| raw:: html
     
