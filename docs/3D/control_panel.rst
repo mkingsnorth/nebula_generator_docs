@@ -332,8 +332,12 @@ Eevee Quality Settings
     .. image:: ../_static/tile_size_compare.jpg
         :alt: Tile Size Comparison in Eevee.
 
+* **Render Samples**: Number of render time samples per pixel.  Increasing this value will increase the detail of the clouds and can reduce speckles in the noise.
+* **Viewport Samples**: Number of viewport render samples per pixel.
+
 * **Volumetric Samples**: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.
 * **Volumetric Shadow Samples**: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass.
+
 * **Bloom Threshold**: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.
 * **Bloom Intensity**: How blended with the image the bloom effect is. Lower values will reduce the overall effect.
 

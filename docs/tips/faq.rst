@@ -198,7 +198,7 @@ This setting can be found on Blender's Render Properties tab or on the Nebula Ge
 Increasing samples
 =============================
 
-You can also increase the volumetric samples and volumetric shadow samples settings if you wish to have greater thickness and contrast at the expense of performance.  
+You can also increase the render samples, volumetric samples and volumetric shadow samples settings if you wish to have greater thickness and contrast at the expense of performance.  Increasing the render samples will decrease any speckles in the clouds, especially around light sources.
 
 .. figure:: ../_static/samples_64_example.png
     :width: 100%
@@ -415,7 +415,7 @@ You are able to render a panoramic view of the nebula in |Cycles| mode which is 
     .. image:: ../_static/pano_glow_cutoff.jpg
         :alt: Panoramic Example
 
-    As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by either reducing the :ref:`glare effect<Glare Threshold>` or by correcting the result in an image editor.
+    As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by either reducing the :ref:`glare effect<Glare Threshold and Mix>` or by correcting the result in an image editor.
 
 .. |HDRIs| raw:: html
 
