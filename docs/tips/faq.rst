@@ -423,4 +423,4 @@ You are able to render a panoramic view of the nebula in |Cycles| mode which is 
 
 .. |Cycles| raw:: html
 
-   <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>HDRIs</b></a>
+   <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>Cycles</b></a>
