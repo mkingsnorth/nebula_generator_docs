@@ -58,8 +58,8 @@ Any general tips?
     * Try swapping out the stars input for your own starfields and you should get more interesting effects.
 * 3D Version 
     * When changing parameters that have a significant effect or preparing for a render, switch the viewport to Wireframe mode.
-    * Start with a high Tile Size and low Samples value, change parameters, and then increase them gradually to get the desired effect.
-    * When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Samples setting but may not be resolved entirely.  It is hoped that EEVEE can be improved to counter this.
+    * Start with a Resolution of 1:4 or 1:8 and a low Samples value, change parameters, and then increase them gradually to get the desired effect.
+    * When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Volumetric Shadow Samples and Volume Steps but may not be resolved entirely.
     * Although the default renderer is EEVEE, the file can be adapted for CYCLES by changing the rendering format and changing the parameters of the materials.  Even though there will be a significant performance, this removed the strobing artefacts mentioned earlier.
 
 
@@ -96,15 +96,13 @@ Disadvantages of Eevee
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/fvZg7gHCcuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-* When animating, a strobing effect can occur.  This is because EEVEE converts the nebula to flat 2D cards when rendering.  The Cycles rendering engine does not have this issue.
+* When animating, a strobing or flickering effect can occur.  This is because EEVEE converts the nebula to flat 2D cards when rendering.  A workaround is to increase the Volumentric Shadow Samples and Volume Steps in the Render Settings to as high a value as possible.
 
-* Edges of the clouds can appear blurred, which can be sharpened if you either :ref:`decrease the tile size<Decreasing Tile Size>` or :ref:`change Blender's code slightly<Changing Blender codebase for a 1px tile size and higher sample limits>` to set an even smaller tile size than the default.  However there is a limit to how sharp the render will be at high resolutions.
+* Edges of the clouds can appear blurred, which can be sharpened if you :ref:`increase the Resolution<Increasing Resolution>`.  However there is a limit to how sharp the render will be.
 
 * Intended as a fast preview renderer, Eevee will encounter performance issues at higher >4K resolutions.
 
-* Whilst rendering, Eevee will use your display adapter which will cause general slowdown on your computer.
-
-
+* Whilst rendering, Eevee will use your display adapter which can cause general slowdown on your computer.
 
 
 =============================
@@ -154,45 +152,45 @@ How can I improve the Eevee render?
     There are further hints and tips about which Eevee settings to change in the :ref:`Eevee Quality Settings` section.
 
 =============================
-Decreasing Tile Size
+Increasing Resolution
 =============================
 
-If you decrease Eevee's volumetric |Tile Size| setting to increase the detail seen in the nebula.  This setting is the size of the pixels in a volume:
+If you increase Eevee's volumetric |Resolution| setting to 1:1 to increase the detail seen in the nebula.  This setting is the size of the pixels in a volume:
 
-.. |Tile Size| raw:: html
+.. |Resolution| raw:: html
 
-   <a href="https://docs.blender.org/manual/en/latest/render/eevee/render_settings/volumetrics.html" target="_blank"><b>Tile Size</b></a>
+   <a href="https://docs.blender.org/manual/en/latest/render/eevee/render_settings/volumetrics.html" target="_blank"><b>Resolution</b></a>
 
 
 
 .. figure:: ../_static/step_size_16px.png
-    :alt: Increasing Tile Size
+    :alt: Increasing Resolution
     :width: 100%
 
-    Tile Size 16px
+    Resolution 1:16
 
 .. figure:: ../_static/step_size_8px.png
-    :alt: Increasing Tile Size
+    :alt: Increasing Resolution
     :width: 100%
 
-    Tile Size 8px
+    Resolution 1:8
 
 .. figure:: ../_static/step_size_4px.png
-    :alt: Increasing Tile Size
+    :alt: Increasing Resolution
     :width: 100%
 
-    Tile Size 4px
+    Resolution 1:4
 
 .. figure:: ../_static/step_size_2px.png
-    :alt: Increasing Tile Size
+    :alt: Increasing Resolution
     :width: 100%
 
-    Tile Size 2px
+    Resolution 1:2
 
 This setting can be found on Blender's Render Properties tab or on the Nebula Generator's :ref:`Control Panel`:
 
 .. figure:: ../_static/quality_tile_size.jpg
-    :alt: Increasing Tile Size
+    :alt: Increasing Resolution
 
 =============================
 Increasing samples
@@ -209,129 +207,6 @@ You can also increase the render samples, volumetric samples and volumetric shad
     :width: 100%
 
     128 Volumetric Samples, 32 Shadow Samples (click to enlarge)
-
-====================================================================================================================
-Changing Blender codebase for a 1px tile size and higher sample limits
-====================================================================================================================
-
-
-.. warning::
-
-    Advanced users only!  This will require some knowledge of building Blender, altering small amounts of code, and may cause Blender to crash in some computer setups.
-
-.. figure:: ../_static/2px_example.png
-   :width: 100%
-
-   Image at 2px Tile Size (click to enlarge)
-
-.. figure:: ../_static/1px_example.png
-   :width: 100%
-
-   Slightly sharper image at 1px Tile Size (click to enlarge)
-
-
-.. image:: ../_static/changing_tile_size.jpg
-    :alt: Changing the tile size
-
-At the moment you can decrease Blender's :ref:`tile size<Decreasing Tile Size>` setting to 2px only in the official Blender version.  You can in fact alter Blender's core code to provide you with a 1px option, and make a custom version of Blender from it.  This will give a slightly sharper image than the default 2px, at the expense of memory usage and performance.
-
-To change Blender's code to do this:
-
-#. Follow the instructions to set up |building Blender source code on the command line| from the official website. Choose the instructions according to your operating system.  
-
-    You don't necessarily need to install development tools, as we will be only altering small amounts of code which can be done in a test editor of your choice.  
-
-    Essentially, get to the point where you can build your own Blender with the :code:`make update` and :code:`make` commands.
-
-#. You will now have a copy of Blender's source code in your local directory where you have set up the build.  Find the following file:
-
-    .. code-block:: console
-
-        <blender code directory>\source\blender\makesrna\intern\rna_scene.c
-
-#. Locate the following block of code:
-
-    .. code-block:: c
-
-        static const EnumPropertyItem eevee_volumetric_tile_size_items[] = {
-            {2, "2", 0, "2 px", ""},
-            {4, "4", 0, "4 px", ""},
-            {8, "8", 0, "8 px", ""},
-            {16, "16", 0, "16 px", ""},
-            {0, NULL, 0, NULL, NULL},
-        };
-        
-
-#. Add the line :code:`{1, "1", 0, "1 px", ""},` to the start of the variable declaration.  The code block should now look like this:
-
-    .. code-block:: c
-        :emphasize-lines: 2
-
-        static const EnumPropertyItem eevee_volumetric_tile_size_items[] = {
-            {1, "1", 0, "1 px", ""},
-            {2, "2", 0, "2 px", ""},
-            {4, "4", 0, "4 px", ""},
-            {8, "8", 0, "8 px", ""},
-            {16, "16", 0, "16 px", ""},
-            {0, NULL, 0, NULL, NULL},
-        };
-
-#. **Optional Step:**  You can increase the limit on the volumetric samples and volumetric shadow samples settings in the same file.
-
-
-
-
-    .. warning:: 
-
-       Higher settings here will dramatically increase render time. 
-
-    Change the following lines of code:
-
-    .. code-block:: c
-
-        RNA_def_property_range(prop, 1, 256);
-        .
-        .
-        .
-        RNA_def_property_range(prop, 1, 128);
-
-    To this:
-
-    .. code-block:: c
-
-        RNA_def_property_range(prop, 1, 2048);
-        .
-        .
-        .
-        RNA_def_property_range(prop, 1, 512);
-
-
-#. Once the changes are made, go to the command prompt and build blender:
-
-    .. code-block:: console
-
-        make
-
-    .. note::
-        If you re-build Blender, especially after a period of time, use the :code:`make clean` and :code:`make update` commands.  See :code:`make help` for further options.
-
-#. When built, navigate to the blender executable to launch Blender.  In Windows, for instance, this will be:
-
-    .. code-block:: console
-
-        build_windows_x64_vc16_Release\bin\Release\blender.exe
-
-#. You should see the 1px tile size option in the drop down options and in the Nebula Generator :ref:`control panel`:
-
-    .. image:: ../_static/1px_control_panel.jpg
-        :alt: 1px from the control panel
-
-
-.. |building Blender source code on the command line| raw:: html
-
-   <a href="https://wiki.blender.org/wiki/Building_Blender" target="_blank"><b>building Blender from the command line</b></a>
-
-
 
 ********************************************************************
 How can I improve the Cycles render?
@@ -415,7 +290,7 @@ You are able to render a panoramic view of the nebula in |Cycles| mode which is 
     .. image:: ../_static/pano_glow_cutoff.jpg
         :alt: Panoramic Example
 
-    As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by either reducing the :ref:`glare effect<Glare Threshold and Mix>` or by correcting the result in an image editor.
+    As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by disabling the Bloom in the :ref:`control panel<Eevee Quality Settings>` (the Bloom Node can also be disabled in the compositor)  or by correcting the result in an image editor.
 
 .. |HDRIs| raw:: html
 

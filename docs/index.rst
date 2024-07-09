@@ -6,10 +6,9 @@
 Nebula Generator documentation
 ============================================
 
-.. image:: _static/nebula_cycles.png
+.. image:: _static/nebula_anim1.gif
     :alt: Nebula Generator 3D
     :width: 100%
-
 
 .. .. figure:: _static/docs_splash.jpg
 ..   :alt: Nebula Generator
@@ -19,6 +18,8 @@ What is the Nebula Generator?
 ---------------------------------
 
 The |Nebula Generator| is for digital artists to create configurable space nebula effects in 2D or 3D using |Blender|.  Great for concept art, game backgrounds, and animations.
+
+Go to the :ref:`Getting Started Section<Getting Started>` for a step by step guide on how to set up and use the 3D Nebula Generator.
 
 Features
 ---------------------------------
