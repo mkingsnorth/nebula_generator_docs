@@ -23,13 +23,13 @@ It needs to be :ref:`installed<Installing the Panel>` separately.
 Installing the Panel
 **********************************
 
-#. Go to *Edit* -> *Preferences*.
+#. Go to *Edit* - *Preferences*.
 #. Select the *Add-ons* tab on the left if it is not already.
-#. Select the *Install...* button along the top.
+#. In the top right drop-down, select the *Install from Disk...* button along the top.
 #. This will open a file dialog where you should navigate to where you have downloaded the **nebula_generator.x.x.x.zip** file (where x.x.x is the version number).  This file should not be unzipped.
-#. Then, click the *Install add-on from file* button.
+#. Then, click the *Install from Disk* button.
 #. Search for the add-on by typing *Nebula Generator* in the search box if it does not already appear.
-#. Make sure the checkbox next to the Add-on (*Add Mesh: Nebula Generator*) is ticked:
+#. Make sure the checkbox next to the Add-on (*Nebula Generator*) is ticked:
 
 .. figure:: ../_static/install_window.jpg
   :alt: Nebula Generator Installed
@@ -83,8 +83,10 @@ Large stars
 
 The Large Stars are actually point like sources that light the nebula.
 
-* **Number**:  The number of large stars in the nebula.  Their number is set relatively low as too many and the lights will become overwhelming.
 * **Seed**: This is a seed value to control the random placement of the stars.  Changing this number will randomly place the stars in different positions.
+* **Number**:  The number of large stars in the nebula.  Their number is set relatively low as too many and the lights will become overwhelming.
+* **Min Star Size**: The minimum size of the large stars.
+* **Max Star Size**: The maximum size of the large stars.
 
 Small stars
 ------------------
@@ -94,9 +96,30 @@ Small stars
 
 The smaller stars do not actually emit light and are exist to proved background and depth.
 
-* **Number**:  The number of small stars in the nebula.
 * **Seed**: This is a seed value to control the random placement of the stars.  Changing this number will randomly place the stars in different positions.
-* **Size**: The size of the small stars.
+* **Star Coverage**: This is the coverage of the stars across the nebula.  Coverage is controlled by a noise function which distributes the stars in different amounts across the scene.  Higher values will increase the number of stars.
+* **Star Density**: This is how tightly packed the stars are.
+* **Noise Scale**:  The size of the noise function controlling the coverage of the stars.
+* **Min Star Size**: The minimum size of the large stars.
+* **Max Star Size**: The maximum size of the large stars.
+
+Star Image
+--------------------------
+
+* **Star Texture**: This is the flat image used for the star.
+
+Chromatic Aberation
+---------------------------
+
+.. figure:: ../_static/chroma_on_off.jpg
+  :alt: Chromatic Aberation
+
+  Chromatic Aberation on/off
+
+Chromatic Aberation adds small distortion around the image to give a more realistic effect.  This can be turned on or off.
+
+* **Dispersion**: The amount of distortion being applied to the image.  Higher values will increase the distortion.
+
 
 
 Colors
@@ -107,40 +130,35 @@ Colors
 
 Change the colors of the lighting, clouds and small stars separately:
 
-Lighting
+Main Light
 ------------------
 
 .. figure:: ../_static/lighting_panel.jpg
   :alt: Lighting Panel
 
+This controls the main directional light in the scene that lights the nebula.
+
+
+* **Color**: The color of the lights.
+* **Strength**: How powerful these light is.
+* **Direction**: The direction of this main light source.
+
+Large Stars Light
+------------------
+
+.. figure:: ../_static/lighting_panel_stars.jpg
+  :alt: Lighting Panel
+
 This controls the light emitted from the :ref:`Large Stars`.
 
 * **Color**: The color of the lights.
-* **Power**: How powerful these lights/stars are.
+* **Strength**: How powerful these lights/stars are.
+* **Custom Distance**: How far away the light reaches.
+* **Shadow**: Whether the light casts a shadow or not.  This can sometimes cause shadow artefacts in the nebula if turned on.
+
 
 Clouds and Small Stars
 -------------------------
-
-Main Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-.. figure:: ../_static/main_cloud_colors.gif
-  :alt: Main Cloud Colors
-  :width: 100%
-
-.. figure:: ../_static/main_cloud_colors.jpg
-  :alt: Main Cloud Colors
-
-* **Color Ramp**: This is a |color ramp| control to change the color of the thickest clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.
-* **Hue/Sat/Val**: This alters the hue, saturation and value of the ramp color.  Colors changes will be shown in the viewport, but not on the ramp controls.
-
-.. |color ramp| raw:: html
-
-   <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a>
-
-
-
 
 Cloud Gas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -152,14 +170,16 @@ Cloud Gas
 .. figure:: ../_static/gas_cloud_colors.jpg
   :alt: Gas Cloud Colors
 
-* **Color Ramp**: This is a |color ramp| control to change the color of the lighter clouds that surround the denser clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.
+* **Color Ramp**: This is a |color ramp| control to change the color of the lighter clouds that surround the clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.
 * **Hue/Sat/Val**: This alters the hue, saturation and value of the ramp color.  Colors changes will be shown in the viewport, but not on the ramp controls.
 
 
+.. |color ramp| raw:: html
+
+   <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a>
+
 Small Stars Colors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. figure:: ../_static/small_stars_colors.gif
   :alt: Small Stars Colors
@@ -206,11 +226,15 @@ Main Cloud Density
   :alt: Cloud Density
 
 
-This controls the density of the main clouds. 
+This controls the density of the main clouds.  In |Absorption Nebula|, these are the parts of the clouds that absorb all light.
 
-The |color ramp| controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.
+The |color ramp| controls where this Absorption cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.
 
 The **Density Multiplier** increases the thickness of the clouds even further.
+
+.. |Absorption Nebula| raw:: html
+
+   <a href="https://en.wikipedia.org/wiki/Dark_nebula" target="_blank"><b>Absorption Nebula</b></a>
 
 
 Cloud Gas Density
@@ -220,9 +244,9 @@ Cloud Gas Density
   :alt: Cloud Density
 
 
-This controls the density of the gas surrounding the clouds.  The |color ramp| controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.
+This controls the density of the gas surrounding the clouds.  These clouds scatter rather than absorb light.  The |color ramp| controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.
 
-The **Density Multiplier** increases the thickness of the clouds even further.
+The **Density Multiplier** decreases the thickness of the clouds even further to give a light scattering effect.
 
 Noise
 =============================
@@ -302,7 +326,29 @@ Control the postion of the nebula's location, rotation and scale inside the obje
 
 * **Location**: Location of the nebula.
 * **Rotation**: Rotation of the nebula's clouds.
-* **Scale**: Overall size of the nebula..
+* **Scale**: Overall size of the nebula.
+
+Object Distortion
+=============================
+
+.. image:: ../_static/nebula_sphere_distort.gif
+    :alt: Nebula Object Distortion
+
+The main Nebula Object is a simple sphere with a cloud like noise distortion applied to it.  Here you can change aspects of this distortion.
+
+* **Seed**:  The random seed used to control the noise.
+* **Distortion Amount**:  How distorted this appears.
+
+Transparency Falloff
+=============================
+
+.. image:: ../_static/transparency_falloff.gif
+    :alt: Transparency falloff
+
+The nebula fradually fades from the center of the object.  These controls change the amount of falloff, or fase, that occurs.
+
+* **Transparency Gradient Ramp**:  This controls the  transparency of the nebula.  The white part of the gradient ramp will be the most transparent part of the nebula, where the black parts will be the least transparent.
+* **Transparency Sphere Size**:  The size of the sphere that the transparency falloff is applied to.
 
 Quality
 =============================
@@ -327,7 +373,7 @@ Eevee Quality Settings
 .. image:: ../_static/eevee_quality_settings.jpg
     :alt: Eevee Quality Settings
 
-* **Tile Size**: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The smaller the tile size, the greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 4px or 8px and then change to 2px for the final render.
+* **Volumetric Resolution**: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The higher the resolution ratio (1:1) means a greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 1:4 or 1:8 and then change to 1:1 for the final render.
 
     .. image:: ../_static/tile_size_compare.jpg
         :alt: Tile Size Comparison in Eevee.
@@ -335,11 +381,10 @@ Eevee Quality Settings
 * **Render Samples**: Number of render time samples per pixel.  Increasing this value will increase the detail of the clouds and can reduce speckles in the noise.
 * **Viewport Samples**: Number of viewport render samples per pixel.
 
-* **Volumetric Samples**: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.
-* **Volumetric Shadow Samples**: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass.
+* **Volume Steps**: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.  
+* **Volumetric Shadow Samples**: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass. This can reduce flickering and strobing effects.
 
 * **Bloom Threshold**: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.
-* **Bloom Intensity**: How blended with the image the bloom effect is. Lower values will reduce the overall effect.
 
 Cycles Quality Settings
 ------------------------------------
@@ -375,6 +420,11 @@ Denoising
    <a href="https://docs.blender.org/manual/en/latest/render/layers/denoising.html" target="_blank"><b>Denoising</b></a>
 
 
+.. |fireflies| raw:: html
+    
+   <a href="https://www.blenderguru.com/articles/7-ways-get-rid-fireflies" target="_blank"><b>Fireflies</b></a>
+   
+
 Step Rate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -387,14 +437,10 @@ This essentially controls the 'thickness' of the nebula volume in the viewport, 
 * **Render Step Rate**: The 'thickness' of the nebula volume in the viewport at render time.
 
 
-Glare Threshold and Mix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use Curves
+------------------------------------
 
-This controls the amount of post-processing *Glare* is added to the render, which affects star glow. 
+.. image:: ../_static/use_curves.jpg
+    :alt: Use Curves
 
-* **Threshold**:  Increasing this parameter will make the stars and image glow less.
-* **Mix**: This controls how much the glare effect is mixed witht the final image: 0.0 represets 50% Glare, -1 will remove the Glare and +1 will overwrite the image with the Glare effect.
-
-.. |fireflies| raw:: html
-    
-   <a href="https://www.blenderguru.com/articles/7-ways-get-rid-fireflies" target="_blank"><b>Fireflies</b></a>
+To Increase the Brightness and Contrast for the nebula image, you can adjust the RGB Curves for the color output.

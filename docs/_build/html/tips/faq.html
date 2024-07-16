@@ -66,9 +66,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#how-can-i-improve-the-eevee-render">How can I improve the Eevee render?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#decreasing-tile-size">Decreasing Tile Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#increasing-resolution">Increasing Resolution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#increasing-samples">Increasing samples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#changing-blender-codebase-for-a-1px-tile-size-and-higher-sample-limits">Changing Blender codebase for a 1px tile size and higher sample limits</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#how-can-i-improve-the-cycles-render">How can I improve the Cycles render?</a><ul>
@@ -156,8 +155,8 @@
 <li><dl class="simple">
 <dt>3D Version</dt><dd><ul>
 <li><p>When changing parameters that have a significant effect or preparing for a render, switch the viewport to Wireframe mode.</p></li>
-<li><p>Start with a high Tile Size and low Samples value, change parameters, and then increase them gradually to get the desired effect.</p></li>
-<li><p>When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Samples setting but may not be resolved entirely.  It is hoped that EEVEE can be improved to counter this.</p></li>
+<li><p>Start with a Resolution of 1:4 or 1:8 and a low Samples value, change parameters, and then increase them gradually to get the desired effect.</p></li>
+<li><p>When animating, you will experience strobing effects on the clouds unfortunately in EEVEE. This can be countered with a higher Volumetric Shadow Samples and Volume Steps but may not be resolved entirely.</p></li>
 <li><p>Although the default renderer is EEVEE, the file can be adapted for CYCLES by changing the rendering format and changing the parameters of the materials.  Even though there will be a significant performance, this removed the strobing artefacts mentioned earlier.</p></li>
 </ul>
 </dd>
@@ -187,10 +186,10 @@
 <h4>Disadvantages of Eevee<a class="headerlink" href="#disadvantages-of-eevee" title="Permalink to this headline"></a></h4>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/fvZg7gHCcuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <ul class="simple">
-<li><p>When animating, a strobing effect can occur.  This is because EEVEE converts the nebula to flat 2D cards when rendering.  The Cycles rendering engine does not have this issue.</p></li>
-<li><p>Edges of the clouds can appear blurred, which can be sharpened if you either <a class="reference internal" href="#decreasing-tile-size"><span class="std std-ref">decrease the tile size</span></a> or <a class="reference internal" href="#changing-blender-codebase-for-a-1px-tile-size-and-higher-sample-limits"><span class="std std-ref">change Blender’s code slightly</span></a> to set an even smaller tile size than the default.  However there is a limit to how sharp the render will be at high resolutions.</p></li>
+<li><p>When animating, a strobing or flickering effect can occur.  This is because EEVEE converts the nebula to flat 2D cards when rendering.  A workaround is to increase the Volumentric Shadow Samples and Volume Steps in the Render Settings to as high a value as possible.</p></li>
+<li><p>Edges of the clouds can appear blurred, which can be sharpened if you <a class="reference internal" href="#increasing-resolution"><span class="std std-ref">increase the Resolution</span></a>.  However there is a limit to how sharp the render will be.</p></li>
 <li><p>Intended as a fast preview renderer, Eevee will encounter performance issues at higher &gt;4K resolutions.</p></li>
-<li><p>Whilst rendering, Eevee will use your display adapter which will cause general slowdown on your computer.</p></li>
+<li><p>Whilst rendering, Eevee will use your display adapter which can cause general slowdown on your computer.</p></li>
 </ul>
 </section>
 </section>
@@ -228,36 +227,36 @@
 <p class="admonition-title">Tip</p>
 <p>There are further hints and tips about which Eevee settings to change in the <a class="reference internal" href="../3D/control_panel.html#eevee-quality-settings"><span class="std std-ref">Eevee Quality Settings</span></a> section.</p>
 </div>
-<section id="decreasing-tile-size">
-<h3>Decreasing Tile Size<a class="headerlink" href="#decreasing-tile-size" title="Permalink to this headline"></a></h3>
-<p>If you decrease Eevee’s volumetric <a href="https://docs.blender.org/manual/en/latest/render/eevee/render_settings/volumetrics.html" target="_blank"><b>Tile Size</b></a> setting to increase the detail seen in the nebula.  This setting is the size of the pixels in a volume:</p>
+<section id="increasing-resolution">
+<h3>Increasing Resolution<a class="headerlink" href="#increasing-resolution" title="Permalink to this headline"></a></h3>
+<p>If you increase Eevee’s volumetric <a href="https://docs.blender.org/manual/en/latest/render/eevee/render_settings/volumetrics.html" target="_blank"><b>Resolution</b></a> setting to 1:1 to increase the detail seen in the nebula.  This setting is the size of the pixels in a volume:</p>
 <figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/step_size_16px.png"><img alt="Increasing Tile Size" src="../_images/step_size_16px.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/step_size_16px.png"><img alt="Increasing Resolution" src="../_images/step_size_16px.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Tile Size 16px</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Resolution 1:16</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="../_images/step_size_8px.png"><img alt="Increasing Tile Size" src="../_images/step_size_8px.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/step_size_8px.png"><img alt="Increasing Resolution" src="../_images/step_size_8px.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Tile Size 8px</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Resolution 1:8</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="../_images/step_size_4px.png"><img alt="Increasing Tile Size" src="../_images/step_size_4px.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/step_size_4px.png"><img alt="Increasing Resolution" src="../_images/step_size_4px.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Tile Size 4px</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Resolution 1:4</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="../_images/step_size_2px.png"><img alt="Increasing Tile Size" src="../_images/step_size_2px.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/step_size_2px.png"><img alt="Increasing Resolution" src="../_images/step_size_2px.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Tile Size 2px</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Resolution 1:2</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This setting can be found on Blender’s Render Properties tab or on the Nebula Generator’s <a class="reference internal" href="../3D/control_panel.html#control-panel"><span class="std std-ref">Control Panel</span></a>:</p>
 <figure class="align-default">
-<img alt="Increasing Tile Size" src="../_images/quality_tile_size.jpg" />
+<img alt="Increasing Resolution" src="../_images/quality_tile_size.jpg" />
 </figure>
 </section>
 <section id="increasing-samples">
@@ -275,117 +274,6 @@
 <p><span class="caption-text">128 Volumetric Samples, 32 Shadow Samples (click to enlarge)</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-</section>
-<section id="changing-blender-codebase-for-a-1px-tile-size-and-higher-sample-limits">
-<h3>Changing Blender codebase for a 1px tile size and higher sample limits<a class="headerlink" href="#changing-blender-codebase-for-a-1px-tile-size-and-higher-sample-limits" title="Permalink to this headline"></a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Advanced users only!  This will require some knowledge of building Blender, altering small amounts of code, and may cause Blender to crash in some computer setups.</p>
-</div>
-<figure class="align-default" id="id7">
-<a class="reference internal image-reference" href="../_images/2px_example.png"><img alt="../_images/2px_example.png" src="../_images/2px_example.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-text">Image at 2px Tile Size (click to enlarge)</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id8">
-<a class="reference internal image-reference" href="../_images/1px_example.png"><img alt="../_images/1px_example.png" src="../_images/1px_example.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-text">Slightly sharper image at 1px Tile Size (click to enlarge)</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
-</figcaption>
-</figure>
-<img alt="Changing the tile size" src="../_images/changing_tile_size.jpg" />
-<p>At the moment you can decrease Blender’s <a class="reference internal" href="#decreasing-tile-size"><span class="std std-ref">tile size</span></a> setting to 2px only in the official Blender version.  You can in fact alter Blender’s core code to provide you with a 1px option, and make a custom version of Blender from it.  This will give a slightly sharper image than the default 2px, at the expense of memory usage and performance.</p>
-<p>To change Blender’s code to do this:</p>
-<ol class="arabic">
-<li><p>Follow the instructions to set up <a href="https://wiki.blender.org/wiki/Building_Blender" target="_blank"><b>building Blender from the command line</b></a> from the official website. Choose the instructions according to your operating system.</p>
-<blockquote>
-<div><p>You don’t necessarily need to install development tools, as we will be only altering small amounts of code which can be done in a test editor of your choice.</p>
-<p>Essentially, get to the point where you can build your own Blender with the <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">update</span></code> and <code class="code docutils literal notranslate"><span class="pre">make</span></code> commands.</p>
-</div></blockquote>
-</li>
-<li><p>You will now have a copy of Blender’s source code in your local directory where you have set up the build.  Find the following file:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;blender code directory&gt;\source\blender\makesrna\intern\rna_scene.c</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Locate the following block of code:</p>
-<blockquote>
-<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EnumPropertyItem</span><span class="w"> </span><span class="n">eevee_volumetric_tile_size_items</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;8 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;16&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;16 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">},</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Add the line <code class="code docutils literal notranslate"><span class="pre">{1,</span> <span class="pre">&quot;1&quot;,</span> <span class="pre">0,</span> <span class="pre">&quot;1</span> <span class="pre">px&quot;,</span> <span class="pre">&quot;&quot;},</span></code> to the start of the variable declaration.  The code block should now look like this:</p>
-<blockquote>
-<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">EnumPropertyItem</span><span class="w"> </span><span class="n">eevee_volumetric_tile_size_items</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="hll"><span class="w">    </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-</span><span class="w">    </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;8 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;16&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;16 px&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">},</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Optional Step:</strong>  You can increase the limit on the volumetric samples and volumetric shadow samples settings in the same file.</p>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Higher settings here will dramatically increase render time.</p>
-</div>
-<p>Change the following lines of code:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">RNA_def_property_range</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">);</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="n">RNA_def_property_range</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-<p>To this:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">RNA_def_property_range</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2048</span><span class="p">);</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="p">.</span><span class="w"></span>
-<span class="n">RNA_def_property_range</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">512</span><span class="p">);</span><span class="w"></span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Once the changes are made, go to the command prompt and build blender:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">make</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you re-build Blender, especially after a period of time, use the <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> and <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">update</span></code> commands.  See <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code> for further options.</p>
-</div>
-</div></blockquote>
-</li>
-<li><p>When built, navigate to the blender executable to launch Blender.  In Windows, for instance, this will be:</p>
-<blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">build_windows_x64_vc16_Release\bin\Release\blender.exe</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>You should see the 1px tile size option in the drop down options and in the Nebula Generator <a class="reference internal" href="../3D/control_panel.html#control-panel"><span class="std std-ref">Control Panel</span></a>:</p>
-<blockquote>
-<div><img alt="1px from the control panel" src="../_images/1px_control_panel.jpg" />
-</div></blockquote>
-</li>
-</ol>
 </section>
 </section>
 <section id="how-can-i-improve-the-cycles-render">
@@ -407,10 +295,10 @@
 </section>
 <section id="which-values-to-change">
 <h3>Which values to change<a class="headerlink" href="#which-values-to-change" title="Permalink to this headline"></a></h3>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id7">
 <img alt="Samples comparison" src="../_images/samples_compare.jpg" />
 <figcaption>
-<p><span class="caption-text">Go to the the <a class="reference internal" href="../3D/control_panel.html#cycles-quality-settings"><span class="std std-ref">Cycles Quality Settings</span></a> section for further hints and tips.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Go to the the <a class="reference internal" href="../3D/control_panel.html#cycles-quality-settings"><span class="std std-ref">Cycles Quality Settings</span></a> section for further hints and tips.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -422,10 +310,10 @@
 </section>
 <section id="how-can-i-create-a-panoramic-skybox">
 <h2>How can I create a panoramic skybox?<a class="headerlink" href="#how-can-i-create-a-panoramic-skybox" title="Permalink to this headline"></a></h2>
-<figure class="align-default" id="id10">
+<figure class="align-default" id="id8">
 <img alt="Panoramic Example" src="../_images/panoramic_hdri_example.png" />
 <figcaption>
-<p><span class="caption-text">Panoramic Skybox Example (Cycles Only)</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Panoramic Skybox Example (Cycles Only)</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -455,7 +343,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <img alt="Panoramic Example" src="../_images/pano_glow_cutoff.jpg" />
-<p>As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by either reducing the <a class="reference internal" href="../3D/control_panel.html#glare-threshold-and-mix"><span class="std std-ref">glare effect</span></a> or by correcting the result in an image editor.</p>
+<p>As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by disabling the Bloom in the <a class="reference internal" href="../3D/control_panel.html#eevee-quality-settings"><span class="std std-ref">control panel</span></a> (the Bloom Node can also be disabled in the compositor)  or by correcting the result in an image editor.</p>
 </div>
 </section>
 </section>

@@ -49,10 +49,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#stars">Stars</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#large-stars">Large stars</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#small-stars">Small stars</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#star-image">Star Image</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#chromatic-aberation">Chromatic Aberation</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#lighting">Lighting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#main-light">Main Light</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#large-stars-light">Large Stars Light</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#clouds-and-small-stars">Clouds and Small Stars</a></li>
 </ul>
 </li>
@@ -68,9 +71,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#transform">Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#object-distortion">Object Distortion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transparency-falloff">Transparency Falloff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#quality">Quality</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#eevee-quality-settings">Eevee Quality Settings</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#cycles-quality-settings">Cycles Quality Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#use-curves">Use Curves</a></li>
 </ul>
 </li>
 </ul>
@@ -124,13 +130,13 @@
 <section id="installing-the-panel">
 <h2>Installing the Panel<a class="headerlink" href="#installing-the-panel" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
-<li><p>Go to <em>Edit</em> -&gt; <em>Preferences</em>.</p></li>
+<li><p>Go to <em>Edit</em> - <em>Preferences</em>.</p></li>
 <li><p>Select the <em>Add-ons</em> tab on the left if it is not already.</p></li>
-<li><p>Select the <em>Install…</em> button along the top.</p></li>
+<li><p>In the top right drop-down, select the <em>Install from Disk…</em> button along the top.</p></li>
 <li><p>This will open a file dialog where you should navigate to where you have downloaded the <strong>nebula_generator.x.x.x.zip</strong> file (where x.x.x is the version number).  This file should not be unzipped.</p></li>
-<li><p>Then, click the <em>Install add-on from file</em> button.</p></li>
+<li><p>Then, click the <em>Install from Disk</em> button.</p></li>
 <li><p>Search for the add-on by typing <em>Nebula Generator</em> in the search box if it does not already appear.</p></li>
-<li><p>Make sure the checkbox next to the Add-on (<em>Add Mesh: Nebula Generator</em>) is ticked:</p></li>
+<li><p>Make sure the checkbox next to the Add-on (<em>Nebula Generator</em>) is ticked:</p></li>
 </ol>
 <figure class="align-default" id="id1">
 <img alt="Nebula Generator Installed" src="../_images/install_window.jpg" />
@@ -179,8 +185,10 @@
 </figure>
 <p>The Large Stars are actually point like sources that light the nebula.</p>
 <ul class="simple">
-<li><p><strong>Number</strong>:  The number of large stars in the nebula.  Their number is set relatively low as too many and the lights will become overwhelming.</p></li>
 <li><p><strong>Seed</strong>: This is a seed value to control the random placement of the stars.  Changing this number will randomly place the stars in different positions.</p></li>
+<li><p><strong>Number</strong>:  The number of large stars in the nebula.  Their number is set relatively low as too many and the lights will become overwhelming.</p></li>
+<li><p><strong>Min Star Size</strong>: The minimum size of the large stars.</p></li>
+<li><p><strong>Max Star Size</strong>: The maximum size of the large stars.</p></li>
 </ul>
 </section>
 <section id="small-stars">
@@ -190,9 +198,31 @@
 </figure>
 <p>The smaller stars do not actually emit light and are exist to proved background and depth.</p>
 <ul class="simple">
-<li><p><strong>Number</strong>:  The number of small stars in the nebula.</p></li>
 <li><p><strong>Seed</strong>: This is a seed value to control the random placement of the stars.  Changing this number will randomly place the stars in different positions.</p></li>
-<li><p><strong>Size</strong>: The size of the small stars.</p></li>
+<li><p><strong>Star Coverage</strong>: This is the coverage of the stars across the nebula.  Coverage is controlled by a noise function which distributes the stars in different amounts across the scene.  Higher values will increase the number of stars.</p></li>
+<li><p><strong>Star Density</strong>: This is how tightly packed the stars are.</p></li>
+<li><p><strong>Noise Scale</strong>:  The size of the noise function controlling the coverage of the stars.</p></li>
+<li><p><strong>Min Star Size</strong>: The minimum size of the large stars.</p></li>
+<li><p><strong>Max Star Size</strong>: The maximum size of the large stars.</p></li>
+</ul>
+</section>
+<section id="star-image">
+<h4>Star Image<a class="headerlink" href="#star-image" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p><strong>Star Texture</strong>: This is the flat image used for the star.</p></li>
+</ul>
+</section>
+<section id="chromatic-aberation">
+<h4>Chromatic Aberation<a class="headerlink" href="#chromatic-aberation" title="Permalink to this headline"></a></h4>
+<figure class="align-default" id="id3">
+<img alt="Chromatic Aberation" src="../_images/chroma_on_off.jpg" />
+<figcaption>
+<p><span class="caption-text">Chromatic Aberation on/off</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Chromatic Aberation adds small distortion around the image to give a more realistic effect.  This can be turned on or off.</p>
+<ul class="simple">
+<li><p><strong>Dispersion</strong>: The amount of distortion being applied to the image.  Higher values will increase the distortion.</p></li>
 </ul>
 </section>
 </section>
@@ -202,32 +232,33 @@
 <img alt="Changing Colors" src="../_images/colors_anim.gif" />
 </figure>
 <p>Change the colors of the lighting, clouds and small stars separately:</p>
-<section id="lighting">
-<h4>Lighting<a class="headerlink" href="#lighting" title="Permalink to this headline"></a></h4>
+<section id="main-light">
+<h4>Main Light<a class="headerlink" href="#main-light" title="Permalink to this headline"></a></h4>
 <figure class="align-default">
 <img alt="Lighting Panel" src="../_images/lighting_panel.jpg" />
+</figure>
+<p>This controls the main directional light in the scene that lights the nebula.</p>
+<ul class="simple">
+<li><p><strong>Color</strong>: The color of the lights.</p></li>
+<li><p><strong>Strength</strong>: How powerful these light is.</p></li>
+<li><p><strong>Direction</strong>: The direction of this main light source.</p></li>
+</ul>
+</section>
+<section id="large-stars-light">
+<h4>Large Stars Light<a class="headerlink" href="#large-stars-light" title="Permalink to this headline"></a></h4>
+<figure class="align-default">
+<img alt="Lighting Panel" src="../_images/lighting_panel_stars.jpg" />
 </figure>
 <p>This controls the light emitted from the <a class="reference internal" href="#large-stars"><span class="std std-ref">Large stars</span></a>.</p>
 <ul class="simple">
 <li><p><strong>Color</strong>: The color of the lights.</p></li>
-<li><p><strong>Power</strong>: How powerful these lights/stars are.</p></li>
+<li><p><strong>Strength</strong>: How powerful these lights/stars are.</p></li>
+<li><p><strong>Custom Distance</strong>: How far away the light reaches.</p></li>
+<li><p><strong>Shadow</strong>: Whether the light casts a shadow or not.  This can sometimes cause shadow artefacts in the nebula if turned on.</p></li>
 </ul>
 </section>
 <section id="clouds-and-small-stars">
 <h4>Clouds and Small Stars<a class="headerlink" href="#clouds-and-small-stars" title="Permalink to this headline"></a></h4>
-<section id="main-cloud">
-<h5>Main Cloud<a class="headerlink" href="#main-cloud" title="Permalink to this headline"></a></h5>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../_images/main_cloud_colors.gif"><img alt="Main Cloud Colors" src="../_images/main_cloud_colors.gif" style="width: 100%;" /></a>
-</figure>
-<figure class="align-default">
-<img alt="Main Cloud Colors" src="../_images/main_cloud_colors.jpg" />
-</figure>
-<ul class="simple">
-<li><p><strong>Color Ramp</strong>: This is a <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> control to change the color of the thickest clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.</p></li>
-<li><p><strong>Hue/Sat/Val</strong>: This alters the hue, saturation and value of the ramp color.  Colors changes will be shown in the viewport, but not on the ramp controls.</p></li>
-</ul>
-</section>
 <section id="cloud-gas">
 <h5>Cloud Gas<a class="headerlink" href="#cloud-gas" title="Permalink to this headline"></a></h5>
 <figure class="align-default">
@@ -237,7 +268,7 @@
 <img alt="Gas Cloud Colors" src="../_images/gas_cloud_colors.jpg" />
 </figure>
 <ul class="simple">
-<li><p><strong>Color Ramp</strong>: This is a <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> control to change the color of the lighter clouds that surround the denser clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.</p></li>
+<li><p><strong>Color Ramp</strong>: This is a <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> control to change the color of the lighter clouds that surround the clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.</p></li>
 <li><p><strong>Hue/Sat/Val</strong>: This alters the hue, saturation and value of the ramp color.  Colors changes will be shown in the viewport, but not on the ramp controls.</p></li>
 </ul>
 </section>
@@ -282,15 +313,15 @@
 <section id="main-cloud-density">
 <h4>Main Cloud Density<a class="headerlink" href="#main-cloud-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/main_cloud_density.jpg" />
-<p>This controls the density of the main clouds.</p>
-<p>The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.</p>
+<p>This controls the density of the main clouds.  In <a href="https://en.wikipedia.org/wiki/Dark_nebula" target="_blank"><b>Absorption Nebula</b></a>, these are the parts of the clouds that absorb all light.</p>
+<p>The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where this Absorption cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.</p>
 <p>The <strong>Density Multiplier</strong> increases the thickness of the clouds even further.</p>
 </section>
 <section id="cloud-gas-density">
 <h4>Cloud Gas Density<a class="headerlink" href="#cloud-gas-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/gas_cloud_density.jpg" />
-<p>This controls the density of the gas surrounding the clouds.  The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.</p>
-<p>The <strong>Density Multiplier</strong> increases the thickness of the clouds even further.</p>
+<p>This controls the density of the gas surrounding the clouds.  These clouds scatter rather than absorb light.  The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.</p>
+<p>The <strong>Density Multiplier</strong> decreases the thickness of the clouds even further to give a light scattering effect.</p>
 </section>
 </section>
 <section id="noise">
@@ -349,7 +380,25 @@
 <ul class="simple">
 <li><p><strong>Location</strong>: Location of the nebula.</p></li>
 <li><p><strong>Rotation</strong>: Rotation of the nebula’s clouds.</p></li>
-<li><p><strong>Scale</strong>: Overall size of the nebula..</p></li>
+<li><p><strong>Scale</strong>: Overall size of the nebula.</p></li>
+</ul>
+</section>
+<section id="object-distortion">
+<h3>Object Distortion<a class="headerlink" href="#object-distortion" title="Permalink to this headline"></a></h3>
+<img alt="Nebula Object Distortion" src="../_images/nebula_sphere_distort.gif" />
+<p>The main Nebula Object is a simple sphere with a cloud like noise distortion applied to it.  Here you can change aspects of this distortion.</p>
+<ul class="simple">
+<li><p><strong>Seed</strong>:  The random seed used to control the noise.</p></li>
+<li><p><strong>Distortion Amount</strong>:  How distorted this appears.</p></li>
+</ul>
+</section>
+<section id="transparency-falloff">
+<h3>Transparency Falloff<a class="headerlink" href="#transparency-falloff" title="Permalink to this headline"></a></h3>
+<img alt="Transparency falloff" src="../_images/transparency_falloff.gif" />
+<p>The nebula fradually fades from the center of the object.  These controls change the amount of falloff, or fase, that occurs.</p>
+<ul class="simple">
+<li><p><strong>Transparency Gradient Ramp</strong>:  This controls the  transparency of the nebula.  The white part of the gradient ramp will be the most transparent part of the nebula, where the black parts will be the least transparent.</p></li>
+<li><p><strong>Transparency Sphere Size</strong>:  The size of the sphere that the transparency falloff is applied to.</p></li>
 </ul>
 </section>
 <section id="quality">
@@ -371,17 +420,16 @@
 <h4>Eevee Quality Settings<a class="headerlink" href="#eevee-quality-settings" title="Permalink to this headline"></a></h4>
 <img alt="Eevee Quality Settings" src="../_images/eevee_quality_settings.jpg" />
 <ul>
-<li><p><strong>Tile Size</strong>: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The smaller the tile size, the greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 4px or 8px and then change to 2px for the final render.</p>
+<li><p><strong>Volumetric Resolution</strong>: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The higher the resolution ratio (1:1) means a greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 1:4 or 1:8 and then change to 1:1 for the final render.</p>
 <blockquote>
 <div><img alt="Tile Size Comparison in Eevee." src="../_images/tile_size_compare.jpg" />
 </div></blockquote>
 </li>
 <li><p><strong>Render Samples</strong>: Number of render time samples per pixel.  Increasing this value will increase the detail of the clouds and can reduce speckles in the noise.</p></li>
 <li><p><strong>Viewport Samples</strong>: Number of viewport render samples per pixel.</p></li>
-<li><p><strong>Volumetric Samples</strong>: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.</p></li>
-<li><p><strong>Volumetric Shadow Samples</strong>: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass.</p></li>
+<li><p><strong>Volume Steps</strong>: This controls the number of times that Eevee calculates a render pass for the volume in the nebula.</p></li>
+<li><p><strong>Volumetric Shadow Samples</strong>: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass. This can reduce flickering and strobing effects.</p></li>
 <li><p><strong>Bloom Threshold</strong>: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.</p></li>
-<li><p><strong>Bloom Intensity</strong>: How blended with the image the bloom effect is. Lower values will reduce the overall effect.</p></li>
 </ul>
 </section>
 <section id="cycles-quality-settings">
@@ -415,14 +463,11 @@
 <li><p><strong>Render Step Rate</strong>: The ‘thickness’ of the nebula volume in the viewport at render time.</p></li>
 </ul>
 </section>
-<section id="glare-threshold-and-mix">
-<h5>Glare Threshold and Mix<a class="headerlink" href="#glare-threshold-and-mix" title="Permalink to this headline"></a></h5>
-<p>This controls the amount of post-processing <em>Glare</em> is added to the render, which affects star glow.</p>
-<ul class="simple">
-<li><p><strong>Threshold</strong>:  Increasing this parameter will make the stars and image glow less.</p></li>
-<li><p><strong>Mix</strong>: This controls how much the glare effect is mixed witht the final image: 0.0 represets 50% Glare, -1 will remove the Glare and +1 will overwrite the image with the Glare effect.</p></li>
-</ul>
 </section>
+<section id="use-curves">
+<h4>Use Curves<a class="headerlink" href="#use-curves" title="Permalink to this headline"></a></h4>
+<img alt="Use Curves" src="../_images/use_curves.jpg" />
+<p>To Increase the Brightness and Contrast for the nebula image, you can adjust the RGB Curves for the color output.</p>
 </section>
 </section>
 </section>
