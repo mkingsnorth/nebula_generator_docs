@@ -32,6 +32,19 @@ Also, by hovering over the parameter box and hitting the *delete* key, the param
 There are a set of sample .blend files I have supplied in a .blend file to give you a head start in configuring different effects.  I'm sure you can find more.
 
 =================================================================================================================================================
+How can I put an object into the Nebula?
+=================================================================================================================================================
+
+This is best achieved using Blender's compositor, otherwise the light from the nebula will adversely affect the object.  Here is a video showing how to do this:
+
+|object_import_vid|
+
+.. |object_import_vid| raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EnNaNn3TpEo?si=hQIO22MG3r8h8bDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+=================================================================================================================================================
 I have a Mac with an AMD Radeon GPU Pro, and when I load the 3D Nebula Generator I can only see the stars. What's happened?
 =================================================================================================================================================
 
