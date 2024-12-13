@@ -47,6 +47,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#when-i-load-the-blend-file-the-viewport-is-blank-what-s-happened">When I load the .blend file the viewport is blank. What’s happened?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-can-i-control-the-parameters-more-slowly-when-i-move-the-mouse">How can I control the parameters more slowly when I move the mouse?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-best-can-i-control-the-parameters-i-ve-managed-to-change-something-so-that-i-m-not-getting-a-good-effect-what-do-you-suggest-i-do">How best can I control the parameters? I’ve managed to change something so that I’m not getting a good effect. What do you suggest I do?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-can-i-put-an-object-into-the-nebula">How can I put an object into the Nebula?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-have-a-mac-with-an-amd-radeon-gpu-pro-and-when-i-load-the-3d-nebula-generator-i-can-only-see-the-stars-what-s-happened">I have a Mac with an AMD Radeon GPU Pro, and when I load the 3D Nebula Generator I can only see the stars. What’s happened?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-cannot-see-the-control-panel-in-blender">I cannot see the <span class="xref std std-ref">control panel</span> in Blender.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#any-general-tips">Any general tips?</a></li>
@@ -124,6 +125,11 @@
 <p>Also, by hovering over the parameter box and hitting the <em>delete</em> key, the parameter will return to its default value.</p>
 <p>There are a set of sample .blend files I have supplied in a .blend file to give you a head start in configuring different effects.  I’m sure you can find more.</p>
 </section>
+<section id="how-can-i-put-an-object-into-the-nebula">
+<h3>How can I put an object into the Nebula?<a class="headerlink" href="#how-can-i-put-an-object-into-the-nebula" title="Permalink to this headline"></a></h3>
+<p>This is best achieved using Blender’s compositor, otherwise the light from the nebula will adversely affect the object.  Here is a video showing how to do this:</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/EnNaNn3TpEo?si=hQIO22MG3r8h8bDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+</section>
 <section id="i-have-a-mac-with-an-amd-radeon-gpu-pro-and-when-i-load-the-3d-nebula-generator-i-can-only-see-the-stars-what-s-happened">
 <h3>I have a Mac with an AMD Radeon GPU Pro, and when I load the 3D Nebula Generator I can only see the stars. What’s happened?<a class="headerlink" href="#i-have-a-mac-with-an-amd-radeon-gpu-pro-and-when-i-load-the-3d-nebula-generator-i-can-only-see-the-stars-what-s-happened" title="Permalink to this headline"></a></h3>
 <p>There seems to be an outstanding issue with Blender’s EEVEE volumetrics engine and the Mac OS AMD Radeon Pro, described here: <a class="reference external" href="https://developer.blender.org/T65873">https://developer.blender.org/T65873</a></p>
@@ -167,7 +173,7 @@
 </section>
 <section id="should-i-use-eevee-or-cycles">
 <h2>Should I use Eevee or Cycles?<a class="headerlink" href="#should-i-use-eevee-or-cycles" title="Permalink to this headline"></a></h2>
-<p>You can switch between the Eevee and Cycles render engines at any time in the <a class="reference internal" href="../3D/control_panel.html#quality"><span class="std std-ref">Quality</span></a> section of the control panel or in Blender’s Render Properties.  Here are some advantages and disadvantages of each render engine to help you choose.</p>
+<p>You can switch between the Eevee and Cycles render engines at any time in the <span class="xref std std-ref">Quality</span> section of the control panel or in Blender’s Render Properties.  Here are some advantages and disadvantages of each render engine to help you choose.</p>
 <p>A possible workflow is to work in Eevee to set up the overall effect, and then switch to Cycles to tailor it further, if needed.</p>
 <section id="eevee">
 <h3>Eevee<a class="headerlink" href="#eevee" title="Permalink to this headline"></a></h3>
@@ -216,7 +222,7 @@
 <li><p>Viewport Preview is slower than Eevee.</p></li>
 <li><p>Effect will be slightly different to the Eevee version.</p></li>
 <li><p>More settings to consider.</p></li>
-<li><p><a href="https://www.blenderguru.com/articles/7-ways-get-rid-fireflies" target="_blank"><b>Fireflies</b></a>, or speckled pixels, will occur which need to be resolved with the <a href="https://docs.blender.org/manual/en/latest/render/layers/denoising.html" target="_blank"><b>Denoiser</b></a>.  See the <a class="reference internal" href="../3D/control_panel.html#denoising"><span class="std std-ref">Denoising</span></a> section.</p></li>
+<li><p><a href="https://www.blenderguru.com/articles/7-ways-get-rid-fireflies" target="_blank"><b>Fireflies</b></a>, or speckled pixels, will occur which need to be resolved with the <a href="https://docs.blender.org/manual/en/latest/render/layers/denoising.html" target="_blank"><b>Denoiser</b></a>.  See the <span class="xref std std-ref">Denoising</span> section.</p></li>
 </ul>
 </section>
 </section>
@@ -225,7 +231,7 @@
 <h2>How can I improve the Eevee render?<a class="headerlink" href="#how-can-i-improve-the-eevee-render" title="Permalink to this headline"></a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>There are further hints and tips about which Eevee settings to change in the <a class="reference internal" href="../3D/control_panel.html#eevee-quality-settings"><span class="std std-ref">Eevee Quality Settings</span></a> section.</p>
+<p>There are further hints and tips about which Eevee settings to change in the <span class="xref std std-ref">Eevee Quality Settings</span> section.</p>
 </div>
 <section id="increasing-resolution">
 <h3>Increasing Resolution<a class="headerlink" href="#increasing-resolution" title="Permalink to this headline"></a></h3>
@@ -280,7 +286,7 @@
 <h2>How can I improve the Cycles render?<a class="headerlink" href="#how-can-i-improve-the-cycles-render" title="Permalink to this headline"></a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>There are further hints and tips about which Cycles settings to change in the <a class="reference internal" href="../3D/control_panel.html#cycles-quality-settings"><span class="std std-ref">Cycles Quality Settings</span></a> section.</p>
+<p>There are further hints and tips about which Cycles settings to change in the <span class="xref std std-ref">Cycles Quality Settings</span> section.</p>
 </div>
 <section id="recommended-settings">
 <h3>Recommended settings<a class="headerlink" href="#recommended-settings" title="Permalink to this headline"></a></h3>
@@ -298,7 +304,7 @@
 <figure class="align-default" id="id7">
 <img alt="Samples comparison" src="../_images/samples_compare.jpg" />
 <figcaption>
-<p><span class="caption-text">Go to the the <a class="reference internal" href="../3D/control_panel.html#cycles-quality-settings"><span class="std std-ref">Cycles Quality Settings</span></a> section for further hints and tips.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Go to the the <span class="xref std std-ref">Cycles Quality Settings</span> section for further hints and tips.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <ul class="simple">
@@ -320,9 +326,9 @@
 <p class="admonition-title">Warning</p>
 <p>This works for Cycles only.  Eevee does not have panoramic camera settings at the moment.</p>
 </div>
-<p>You are able to render a panoramic view of the nebula in <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>HDRIs</b></a> mode which is useful for creating <a href="https://www.adobe.com/creativecloud/file-types/image/raster/hdri-file.html" target="_blank"><b>HDRIs</b></a> and background environments for games:</p>
+<p>You are able to render a panoramic view of the nebula in <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>Cycles</b></a> mode which is useful for creating <a href="https://www.adobe.com/creativecloud/file-types/image/raster/hdri-file.html" target="_blank"><b>HDRIs</b></a> and background environments for games:</p>
 <ol class="arabic">
-<li><p>Make you are in <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>HDRIs</b></a> rendering mode.</p></li>
+<li><p>Make you are in <a href="https://docs.blender.org/manual/en/latest/render/cycles/introduction.html" target="_blank"><b>Cycles</b></a> rendering mode.</p></li>
 <li><p>Move the camera to the center of your scene (location 0,0,0).</p></li>
 <li><p>Select the camera and go to the ‘Object Data Properties’ tab on the right hand panel.</p></li>
 <li><p>In the Lens section change the following:</p>
@@ -343,7 +349,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <img alt="Panoramic Example" src="../_images/pano_glow_cutoff.jpg" />
-<p>As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by disabling the Bloom in the <a class="reference internal" href="../3D/control_panel.html#eevee-quality-settings"><span class="std std-ref">control panel</span></a> (the Bloom Node can also be disabled in the compositor)  or by correcting the result in an image editor.</p>
+<p>As star glow is added to the image afterwards you may notice cut-off glows when the image wraps around a spherical background.  You can address this by disabling the Bloom in the <span class="xref std std-ref">control panel</span> (the Bloom Node can also be disabled in the compositor)  or by correcting the result in an image editor.</p>
 </div>
 </section>
 </section>

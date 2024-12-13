@@ -23,6 +23,21 @@ It needs to be :ref:`installed<Installing the Panel>` separately.
 Installing the Panel
 **********************************
 
+---------------------------------
+Blender 4.2 and Above
+---------------------------------
+
+.. image:: ../_static/installation.gif
+   :alt: Installation
+
+Drag and drop the *nebula_generator* installation zip file into Blender to install the add-on.  
+
+If you have any issues do not hesitate to get in touch via `info@configurate.net <mailto:info@configurate.net>`_.
+
+---------------------------------
+Previous Blender Versions
+---------------------------------
+
 #. Go to *Edit* - *Preferences*.
 #. Select the *Add-ons* tab on the left if it is not already.
 #. In the top right drop-down, select the *Install from Disk...* button along the top.

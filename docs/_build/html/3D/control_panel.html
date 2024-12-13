@@ -43,44 +43,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="3d_overview.html">3D Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="usage.html">Getting Started</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Control Panel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installing-the-panel">Installing the Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-the-panel">Installing the Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#blender-4-2-and-above">Blender 4.2 and Above</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#previous-blender-versions">Previous Blender Versions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-control-panel">Using the Control Panel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#control-panel-parameters">Control Panel Parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#stars">Stars</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#large-stars">Large stars</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#small-stars">Small stars</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#star-image">Star Image</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#chromatic-aberation">Chromatic Aberation</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#colors">Colors</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#main-light">Main Light</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#large-stars-light">Large Stars Light</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#clouds-and-small-stars">Clouds and Small Stars</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#density">Density</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#main-cloud-density">Main Cloud Density</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#cloud-gas-density">Cloud Gas Density</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#noise">Noise</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#overall-noise">Overall Noise</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#noise-scale-variation">Noise Scale Variation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#noise-distortion-variation">Noise Distortion Variation</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#transform">Transform</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#object-distortion">Object Distortion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transparency-falloff">Transparency Falloff</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#quality">Quality</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#eevee-quality-settings">Eevee Quality Settings</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#cycles-quality-settings">Cycles Quality Settings</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#use-curves">Use Curves</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#control-panel-parameters">Control Panel Parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -129,6 +98,14 @@
 </div>
 <section id="installing-the-panel">
 <h2>Installing the Panel<a class="headerlink" href="#installing-the-panel" title="Permalink to this headline"></a></h2>
+<section id="blender-4-2-and-above">
+<h3>Blender 4.2 and Above<a class="headerlink" href="#blender-4-2-and-above" title="Permalink to this headline"></a></h3>
+<img alt="Installation" src="../_images/installation.gif" />
+<p>Drag and drop the <em>nebula_generator</em> installation zip file into Blender to install the add-on.</p>
+<p>If you have any issues do not hesitate to get in touch via <a class="reference external" href="mailto:info&#37;&#52;&#48;configurate&#46;net">info<span>&#64;</span>configurate<span>&#46;</span>net</a>.</p>
+</section>
+<section id="previous-blender-versions">
+<h3>Previous Blender Versions<a class="headerlink" href="#previous-blender-versions" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
 <li><p>Go to <em>Edit</em> - <em>Preferences</em>.</p></li>
 <li><p>Select the <em>Add-ons</em> tab on the left if it is not already.</p></li>
@@ -138,20 +115,21 @@
 <li><p>Search for the add-on by typing <em>Nebula Generator</em> in the search box if it does not already appear.</p></li>
 <li><p>Make sure the checkbox next to the Add-on (<em>Nebula Generator</em>) is ticked:</p></li>
 </ol>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="Nebula Generator Installed" src="../_images/install_window.jpg" />
 <figcaption>
-<p><span class="caption-text">Nebula Generator Panel Installed</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Nebula Generator Panel Installed</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>If you have any issues do not hesitate to get in touch via <a class="reference external" href="mailto:info&#37;&#52;&#48;configurate&#46;net">info<span>&#64;</span>configurate<span>&#46;</span>net</a>.</p>
 </section>
+</section>
 <section id="using-the-control-panel">
 <h2>Using the Control Panel<a class="headerlink" href="#using-the-control-panel" title="Permalink to this headline"></a></h2>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <img alt="Nebula Generator Installed" src="../_images/side_panel_anim.gif" />
 <figcaption>
-<p><span class="caption-text">Accessing the control panel.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Accessing the control panel.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -172,14 +150,10 @@
 <section id="control-panel-parameters">
 <h2>Control Panel Parameters<a class="headerlink" href="#control-panel-parameters" title="Permalink to this headline"></a></h2>
 <p>Each section controls a different aspect of the nebula:</p>
-<section id="stars">
-<h3>Stars<a class="headerlink" href="#stars" title="Permalink to this headline"></a></h3>
 <figure class="align-default">
 <img alt="Nebula Generator Controls" src="../_images/controls_stars.jpg" />
 </figure>
 <p>This controls the number and random placement of the stars.</p>
-<section id="large-stars">
-<h4>Large stars<a class="headerlink" href="#large-stars" title="Permalink to this headline"></a></h4>
 <figure class="align-default">
 <img alt="Large Stars" src="../_images/large_stars.jpg" />
 </figure>
@@ -190,9 +164,6 @@
 <li><p><strong>Min Star Size</strong>: The minimum size of the large stars.</p></li>
 <li><p><strong>Max Star Size</strong>: The maximum size of the large stars.</p></li>
 </ul>
-</section>
-<section id="small-stars">
-<h4>Small stars<a class="headerlink" href="#small-stars" title="Permalink to this headline"></a></h4>
 <figure class="align-default">
 <img alt="Small Stars" src="../_images/small_stars.jpg" />
 </figure>
@@ -205,35 +176,23 @@
 <li><p><strong>Min Star Size</strong>: The minimum size of the large stars.</p></li>
 <li><p><strong>Max Star Size</strong>: The maximum size of the large stars.</p></li>
 </ul>
-</section>
-<section id="star-image">
-<h4>Star Image<a class="headerlink" href="#star-image" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p><strong>Star Texture</strong>: This is the flat image used for the star.</p></li>
 </ul>
-</section>
-<section id="chromatic-aberation">
-<h4>Chromatic Aberation<a class="headerlink" href="#chromatic-aberation" title="Permalink to this headline"></a></h4>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
 <img alt="Chromatic Aberation" src="../_images/chroma_on_off.jpg" />
 <figcaption>
-<p><span class="caption-text">Chromatic Aberation on/off</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">Chromatic Aberation on/off</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>Chromatic Aberation adds small distortion around the image to give a more realistic effect.  This can be turned on or off.</p>
 <ul class="simple">
 <li><p><strong>Dispersion</strong>: The amount of distortion being applied to the image.  Higher values will increase the distortion.</p></li>
 </ul>
-</section>
-</section>
-<section id="colors">
-<h3>Colors<a class="headerlink" href="#colors" title="Permalink to this headline"></a></h3>
 <figure class="align-default">
 <img alt="Changing Colors" src="../_images/colors_anim.gif" />
 </figure>
 <p>Change the colors of the lighting, clouds and small stars separately:</p>
-<section id="main-light">
-<h4>Main Light<a class="headerlink" href="#main-light" title="Permalink to this headline"></a></h4>
 <figure class="align-default">
 <img alt="Lighting Panel" src="../_images/lighting_panel.jpg" />
 </figure>
@@ -243,24 +202,16 @@
 <li><p><strong>Strength</strong>: How powerful these light is.</p></li>
 <li><p><strong>Direction</strong>: The direction of this main light source.</p></li>
 </ul>
-</section>
-<section id="large-stars-light">
-<h4>Large Stars Light<a class="headerlink" href="#large-stars-light" title="Permalink to this headline"></a></h4>
 <figure class="align-default">
 <img alt="Lighting Panel" src="../_images/lighting_panel_stars.jpg" />
 </figure>
-<p>This controls the light emitted from the <a class="reference internal" href="#large-stars"><span class="std std-ref">Large stars</span></a>.</p>
+<p>This controls the light emitted from the <span class="xref std std-ref">Large Stars</span>.</p>
 <ul class="simple">
 <li><p><strong>Color</strong>: The color of the lights.</p></li>
 <li><p><strong>Strength</strong>: How powerful these lights/stars are.</p></li>
 <li><p><strong>Custom Distance</strong>: How far away the light reaches.</p></li>
 <li><p><strong>Shadow</strong>: Whether the light casts a shadow or not.  This can sometimes cause shadow artefacts in the nebula if turned on.</p></li>
 </ul>
-</section>
-<section id="clouds-and-small-stars">
-<h4>Clouds and Small Stars<a class="headerlink" href="#clouds-and-small-stars" title="Permalink to this headline"></a></h4>
-<section id="cloud-gas">
-<h5>Cloud Gas<a class="headerlink" href="#cloud-gas" title="Permalink to this headline"></a></h5>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/gas_cloud_colors.gif"><img alt="Gas Cloud Colors" src="../_images/gas_cloud_colors.gif" style="width: 100%;" /></a>
 </figure>
@@ -271,9 +222,6 @@
 <li><p><strong>Color Ramp</strong>: This is a <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> control to change the color of the lighter clouds that surround the clouds.  Values on the left hand side of the ramp controls the colors of the least dense part of those clouds, where values on the right control the most dense parts.</p></li>
 <li><p><strong>Hue/Sat/Val</strong>: This alters the hue, saturation and value of the ramp color.  Colors changes will be shown in the viewport, but not on the ramp controls.</p></li>
 </ul>
-</section>
-<section id="small-stars-colors">
-<h5>Small Stars Colors<a class="headerlink" href="#small-stars-colors" title="Permalink to this headline"></a></h5>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/small_stars_colors.gif"><img alt="Small Stars Colors" src="../_images/small_stars_colors.gif" style="width: 100%;" /></a>
 </figure>
@@ -284,9 +232,6 @@
 <li><p><strong>Color Ramp</strong>: This is a <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> control to change the different colors of the small background stars.  The range of colors along the ramp are randomly assigned to each star.</p></li>
 <li><p><strong>Hue/Sat/Val</strong>: This alters the hue, saturation and value of the colors.  Colors changes will be shown in the viewport, but not on the ramp controls.</p></li>
 </ul>
-</section>
-<section id="overall-hue-saturation-value">
-<h5>Overall Hue/Saturation/Value<a class="headerlink" href="#overall-hue-saturation-value" title="Permalink to this headline"></a></h5>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/overall_hsv.gif"><img alt="Small Stars Colors" src="../_images/overall_hsv.gif" style="width: 100%;" /></a>
 </figure>
@@ -303,29 +248,15 @@
 </div></blockquote>
 <p>You can expand the width of the panel so you have more room to control the color ramps.</p>
 </div>
-</section>
-</section>
-</section>
-<section id="density">
-<h3>Density<a class="headerlink" href="#density" title="Permalink to this headline"></a></h3>
 <img alt="Cloud Density" src="../_images/main_cloud_density.gif" />
 <p>Control the different densities and sizes of the nebula’s cloud and gas.</p>
-<section id="main-cloud-density">
-<h4>Main Cloud Density<a class="headerlink" href="#main-cloud-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/main_cloud_density.jpg" />
 <p>This controls the density of the main clouds.  In <a href="https://en.wikipedia.org/wiki/Dark_nebula" target="_blank"><b>Absorption Nebula</b></a>, these are the parts of the clouds that absorb all light.</p>
 <p>The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where this Absorption cloud starts and ends.  The white part of the gradient ramp will be the thickest part of the cloud and the black parts will have no cloud at all.  Try dragging different parts of the gradient to get different effects, or by adding or removing different control points on the gradient.</p>
 <p>The <strong>Density Multiplier</strong> increases the thickness of the clouds even further.</p>
-</section>
-<section id="cloud-gas-density">
-<h4>Cloud Gas Density<a class="headerlink" href="#cloud-gas-density" title="Permalink to this headline"></a></h4>
 <img alt="Cloud Density" src="../_images/gas_cloud_density.jpg" />
 <p>This controls the density of the gas surrounding the clouds.  These clouds scatter rather than absorb light.  The <a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html" target="_blank"><b>color ramp</b></a> controls where the cloud starts and ends.  The white parts of the gradient ramp will be the thickest part of the gas and the black parts will have no clouds at all.</p>
 <p>The <strong>Density Multiplier</strong> decreases the thickness of the clouds even further to give a light scattering effect.</p>
-</section>
-</section>
-<section id="noise">
-<h3>Noise<a class="headerlink" href="#noise" title="Permalink to this headline"></a></h3>
 <img alt="Changing the Noise" src="../_images/noise_changing.gif" />
 <p>The cloud shapes are generated using a set of <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/noise.html" target="_blank"><b>noise functions</b></a> overlayed on top of each other.  See <a href="https://en.wikipedia.org/wiki/Perlin_noise" target="_blank"><b>this article</b></a> for how noise functions are used in computer graphics.</p>
 <p>To get a variety of effects, changing the parameters here will change the different inputs to those <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/noise.html" target="_blank"><b>noise functions</b></a>.</p>
@@ -333,8 +264,6 @@
 <p class="admonition-title">Tip</p>
 <p>If you wish to have even greater control, try changing the noise node set-up in the “Shape” section of the shader tab.  However, this section of the control panel will no longer work properly as it is tied to the existing node setup.</p>
 </div>
-<section id="overall-noise">
-<h4>Overall Noise<a class="headerlink" href="#overall-noise" title="Permalink to this headline"></a></h4>
 <p>This controls the overall noise being applied.</p>
 <ul>
 <li><p><strong>Detail</strong>: Number of noise octaves or waves, creating more variation in the clouds. Higher number of octaves corresponds to a higher render time.</p>
@@ -348,9 +277,6 @@
 </div></blockquote>
 </li>
 </ul>
-</section>
-<section id="noise-scale-variation">
-<h4>Noise Scale Variation<a class="headerlink" href="#noise-scale-variation" title="Permalink to this headline"></a></h4>
 <p>The ‘Size’, or ‘Scale’, of the overall noise effect is manipulated even further by another noise function to give a more dynamic effect.</p>
 <img alt="Changing the Noise" src="../_images/noise_scale_var_control.gif" />
 <ul class="simple">
@@ -359,9 +285,6 @@
 <li><p><strong>Roughness</strong>: Number of ‘peaks’ in the noise used to affect the overall scale of the clouds.</p></li>
 <li><p><strong>Distortion</strong>: The amount of bending or distortion being applied to the overall noise scale.</p></li>
 </ul>
-</section>
-<section id="noise-distortion-variation">
-<h4>Noise Distortion Variation<a class="headerlink" href="#noise-distortion-variation" title="Permalink to this headline"></a></h4>
 <p>The ‘distortion’ of the overall noise is also manipulated by another noise function.</p>
 <p>Although not always apparent in preview mode, this adds a greater level of smaller surface detail to the clouds.  Be careful increasing the parameters such as ‘scale’ too high or the clouds may appear too noisey at render time:</p>
 <img alt="Noise distortion gotcha" src="../_images/noise_distortion_scale_gotcha.jpg" />
@@ -371,10 +294,6 @@
 <li><p><strong>Roughness</strong>: Number of ‘peaks’ in the noise used to affect the overall distortion of the clouds.</p></li>
 <li><p><strong>Distortion</strong>: The amount of bending or distortion being applied to the overall noise distortion.</p></li>
 </ul>
-</section>
-</section>
-<section id="transform">
-<h3>Transform<a class="headerlink" href="#transform" title="Permalink to this headline"></a></h3>
 <p>Control the postion of the nebula’s location, rotation and scale inside the object:</p>
 <img alt="Noise transform control in action" src="../_images/noise_transform_control.gif" />
 <ul class="simple">
@@ -382,27 +301,18 @@
 <li><p><strong>Rotation</strong>: Rotation of the nebula’s clouds.</p></li>
 <li><p><strong>Scale</strong>: Overall size of the nebula.</p></li>
 </ul>
-</section>
-<section id="object-distortion">
-<h3>Object Distortion<a class="headerlink" href="#object-distortion" title="Permalink to this headline"></a></h3>
 <img alt="Nebula Object Distortion" src="../_images/nebula_sphere_distort.gif" />
 <p>The main Nebula Object is a simple sphere with a cloud like noise distortion applied to it.  Here you can change aspects of this distortion.</p>
 <ul class="simple">
 <li><p><strong>Seed</strong>:  The random seed used to control the noise.</p></li>
 <li><p><strong>Distortion Amount</strong>:  How distorted this appears.</p></li>
 </ul>
-</section>
-<section id="transparency-falloff">
-<h3>Transparency Falloff<a class="headerlink" href="#transparency-falloff" title="Permalink to this headline"></a></h3>
 <img alt="Transparency falloff" src="../_images/transparency_falloff.gif" />
 <p>The nebula fradually fades from the center of the object.  These controls change the amount of falloff, or fase, that occurs.</p>
 <ul class="simple">
 <li><p><strong>Transparency Gradient Ramp</strong>:  This controls the  transparency of the nebula.  The white part of the gradient ramp will be the most transparent part of the nebula, where the black parts will be the least transparent.</p></li>
 <li><p><strong>Transparency Sphere Size</strong>:  The size of the sphere that the transparency falloff is applied to.</p></li>
 </ul>
-</section>
-<section id="quality">
-<h3>Quality<a class="headerlink" href="#quality" title="Permalink to this headline"></a></h3>
 <img alt="Quality control" src="../_images/quality_control.gif" />
 <p>Depending on whether you are rendering in Eevee or Cycles, the following parameters expose the most frequently used settings when controlling the quality of the nebula image.</p>
 <div class="admonition tip">
@@ -416,8 +326,6 @@
 </div></blockquote>
 </li>
 </ul>
-<section id="eevee-quality-settings">
-<h4>Eevee Quality Settings<a class="headerlink" href="#eevee-quality-settings" title="Permalink to this headline"></a></h4>
 <img alt="Eevee Quality Settings" src="../_images/eevee_quality_settings.jpg" />
 <ul>
 <li><p><strong>Volumetric Resolution</strong>: Arguably one of the most important settings in Eevee volumetric rendering, this controls the level of detail for the render.  The higher the resolution ratio (1:1) means a greater level of detail at the expense of memory usage and render times which will also slow down your GPU in Eevee.  Whilst altering the nebula parameters, it is best to keep the setting at either 1:4 or 1:8 and then change to 1:1 for the final render.</p>
@@ -431,29 +339,18 @@
 <li><p><strong>Volumetric Shadow Samples</strong>: This controls the number of times that Eevee calculates the quality of the shadows when doing a render pass. This can reduce flickering and strobing effects.</p></li>
 <li><p><strong>Bloom Threshold</strong>: This affects the glow of the stars.  Reducing this value increases the number of stars affected and the overall brightness of the nebula.</p></li>
 </ul>
-</section>
-<section id="cycles-quality-settings">
-<h4>Cycles Quality Settings<a class="headerlink" href="#cycles-quality-settings" title="Permalink to this headline"></a></h4>
 <img alt="Cycles Quality Settings" src="../_images/cycles_quality_settings.jpg" />
-<section id="samples">
-<h5>Samples<a class="headerlink" href="#samples" title="Permalink to this headline"></a></h5>
 <p>The number of times Cycles will calculate a render pass.  Higher levels will increase details, but will also increase time to render and system usage.</p>
 <img alt="Samples comparison" src="../_images/samples_compare.jpg" />
 <ul class="simple">
 <li><p><strong>Viewport Samples</strong>: The number of times Cycles will calculate a render pass in the viewport.</p></li>
 <li><p><strong>Render Samples</strong>: The number of times Cycles will calculate a render pass at render time.</p></li>
 </ul>
-</section>
-<section id="denoising">
-<h5>Denoising<a class="headerlink" href="#denoising" title="Permalink to this headline"></a></h5>
 <p><a href="https://docs.blender.org/manual/en/latest/render/layers/denoising.html" target="_blank"><b>Denoising</b></a> is automatically switched on whilst rendering to remove <a href="https://www.blenderguru.com/articles/7-ways-get-rid-fireflies" target="_blank"><b>Fireflies</b></a>, or speckles, in the nebula effect.  Sometimes, this may produce a slightly <em>liquid</em> effect at lower sample settings.  You may wish to turn the denoiser off and increase the sample settings in this case.</p>
 <ul class="simple">
 <li><p><strong>Denoiser</strong>:  Which denoising function to use. Using this combined with the <em>samples</em> settings should produce a smoother result.</p></li>
 </ul>
 <img alt="Denoising comparison" src="../_images/denoising_compare.jpg" />
-</section>
-<section id="step-rate">
-<h5>Step Rate<a class="headerlink" href="#step-rate" title="Permalink to this headline"></a></h5>
 <p>This essentially controls the ‘thickness’ of the nebula volume in the viewport, or in other words the distance between points in the volume. Lower values increase the thickness.</p>
 <blockquote>
 <div><img alt="Step Rate Comparison" src="../_images/step_rate_compare.jpg" />
@@ -462,14 +359,8 @@
 <li><p><strong>Viewport Step Rate</strong>:  The ‘thickness’ of the nebula volume in the viewport.</p></li>
 <li><p><strong>Render Step Rate</strong>: The ‘thickness’ of the nebula volume in the viewport at render time.</p></li>
 </ul>
-</section>
-</section>
-<section id="use-curves">
-<h4>Use Curves<a class="headerlink" href="#use-curves" title="Permalink to this headline"></a></h4>
 <img alt="Use Curves" src="../_images/use_curves.jpg" />
 <p>To Increase the Brightness and Contrast for the nebula image, you can adjust the RGB Curves for the color output.</p>
-</section>
-</section>
 </section>
 </section>
 
