@@ -67,8 +67,7 @@ There are visible squares around the stars in the nebula when rendering in Cycle
 .. image:: ../_static/squares_around_stars.jpg
     :alt: Squares around stars
 
-The square effects are a result of billboarding the stars in the nebula.  
-You should be able to remove this by selecting the *Nebula Box* object, going to the *Material* properties tab, expanding the *Settings* section, going to the *Volume* sub-section and changing the *Sampling* type from *Equirectangular* to *Distance*:
+The square effects are a result of billboarding of the stars in the nebula, where the stars are actually flat image planes that always face the camera.   You should be able to remove this by selecting the *Nebula Box* object, going to the *Material* properties tab, expanding the *Settings* section, going to the *Volume* sub-section and changing the *Sampling* type from *Equirectangular* to *Distance*:
 
 .. image:: ../_static/sampling_distance_change.jpg
     :alt: Sampling Type
