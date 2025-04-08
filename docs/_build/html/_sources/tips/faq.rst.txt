@@ -60,6 +60,19 @@ I cannot see the :ref:`control panel` in Blender.
     * The panel will only open with one of the Nebula Generator files with the 'Nebula Box' object in it.
     * If you cannot see any of the side panels on the right, pressed the 'N' which should make them appear.
 
+===================================================================================================================================================
+There are visible squares around the stars in the nebula when rendering in Cycles. How can I remove them?
+===================================================================================================================================================
+
+.. image:: ../_static/squares_around_stars.jpg
+    :alt: Squares around stars
+
+The square effects are a result of billboarding the stars in the nebula.  
+You should be able to remove this by selecting the *Nebula Box* object, going to the *Material* properties tab, expanding the *Settings* section, going to the *Volume* sub-section and changing the *Sampling* type from *Equirectangular* to *Distance*:
+
+.. image:: ../_static/sampling_distance_change.jpg
+    :alt: Sampling Type
+
 ============================
 Any general tips?
 ============================

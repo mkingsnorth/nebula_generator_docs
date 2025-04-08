@@ -50,6 +50,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-can-i-put-an-object-into-the-nebula">How can I put an object into the Nebula?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-have-a-mac-with-an-amd-radeon-gpu-pro-and-when-i-load-the-3d-nebula-generator-i-can-only-see-the-stars-what-s-happened">I have a Mac with an AMD Radeon GPU Pro, and when I load the 3D Nebula Generator I can only see the stars. What’s happened?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#i-cannot-see-the-control-panel-in-blender">I cannot see the <span class="xref std std-ref">control panel</span> in Blender.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#there-are-visible-squares-around-the-stars-in-the-nebula-when-rendering-in-cycles-how-can-i-remove-them">There are visible squares around the stars in the nebula when rendering in Cycles. How can I remove them?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#any-general-tips">Any general tips?</a></li>
 </ul>
 </li>
@@ -144,6 +145,13 @@
 <li><p>If you cannot see any of the side panels on the right, pressed the ‘N’ which should make them appear.</p></li>
 </ul>
 </div></blockquote>
+</section>
+<section id="there-are-visible-squares-around-the-stars-in-the-nebula-when-rendering-in-cycles-how-can-i-remove-them">
+<h3>There are visible squares around the stars in the nebula when rendering in Cycles. How can I remove them?<a class="headerlink" href="#there-are-visible-squares-around-the-stars-in-the-nebula-when-rendering-in-cycles-how-can-i-remove-them" title="Permalink to this headline"></a></h3>
+<img alt="Squares around stars" src="../_images/squares_around_stars.jpg" />
+<p>The square effects are a result of billboarding the stars in the nebula.
+You should be able to remove this by selecting the <em>Nebula Box</em> object, going to the <em>Material</em> properties tab, expanding the <em>Settings</em> section, going to the <em>Volume</em> sub-section and changing the <em>Sampling</em> type from <em>Equirectangular</em> to <em>Distance</em>:</p>
+<img alt="Sampling Type" src="../_images/sampling_distance_change.jpg" />
 </section>
 <section id="any-general-tips">
 <h3>Any general tips?<a class="headerlink" href="#any-general-tips" title="Permalink to this headline"></a></h3>
